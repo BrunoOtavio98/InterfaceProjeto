@@ -16,7 +16,7 @@ namespace InterfaceCupula
         /// </summary>
     
         static Usuario userLogged;
-        static Inversor inversorObj;
+        public static Inversor inversorObj = new Inversor(true,true,true,0.0f);
 
         static void Main()
         {   
@@ -38,17 +38,9 @@ namespace InterfaceCupula
         public static void setUserLogged(Usuario user)
         {
             userLogged = new Usuario(user.userId, user.Nome, user.Senha);
-        }
+        }     
 
-        public static Inversor getInversor()
-        {
-            return inversorObj;
-        }
+     
 
-        public static void setInversor(Inversor inv)
-        {
-
-            inversorObj = new Inversor(inv.GiraPara, inv.Habilita, inv.DirEsq, inv.ControleVelocidade);
-        }
     }
 }

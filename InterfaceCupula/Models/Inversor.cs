@@ -9,21 +9,29 @@ namespace InterfaceCupula.Models
     class Inversor
     {
 
-        public int GiraPara { get; set; }
+        public bool GiraPara { get; set; }
 
-        public int Habilita { get; set; }
+        public bool Habilita { get; set; }
 
-        public int DirEsq { get; set; }
+        public bool DirEsq { get; set; }
 
         public float ControleVelocidade { get; set; }
 
-        public Inversor(int gira_para, int habilita, int dir_esq, float controleVel)
+        public Inversor(bool gira_para, bool habilita, bool dir_esq, float controleVel)
         {
 
             GiraPara = gira_para;
             Habilita = habilita;
             DirEsq = dir_esq;
             ControleVelocidade = controleVel;
+        }
+
+      
+        public Inversor()
+        {
+
+
+
         }
 
     }
