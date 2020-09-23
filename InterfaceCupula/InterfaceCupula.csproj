@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DatabaseManipulation.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>

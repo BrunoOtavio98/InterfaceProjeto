@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InterfaceCupula.Controller;
+using InterfaceCupula.Models;
 
 namespace InterfaceCupula
 {
@@ -28,39 +29,43 @@ namespace InterfaceCupula
 
         private void botaoLogin_Click(object sender, EventArgs e)
         {
+            List<Usuario> dataUsers;
 
-            if (BoxSenha.Text.Equals("Senha") || BoxNome.Text.Length.Equals("Nome do usuário"))
+            if (BoxSenha.Text.Equals("Senha") || BoxNome.Text.Length.Equals("Nome do usuário") || BoxNome.Text.Length == 0 || BoxSenha.Text.Length == 0)
             {
 
-                BoxSenha.UseSystemPasswordChar = false;
-                BoxSenha.PasswordChar = '\0';
-
-                BoxNome.Text = "Nome do usuário";
-                BoxSenha.Text = "Senha";
-
-
-                controlaClickNome = true;
-                controlaClickSenha = true;
+                AtualizarEstadoMsgBox();
             }
             else
             {
 
+                dataUsers = DatabaseManipulation.DBUsers();
+               
+
+                foreach (Usuario user in dataUsers)
+                {
+                   
+
+                    if (user.Nome.Equals(BoxNome.Text) && user.Senha.Equals(BoxSenha.Text))
+                    {
 
 
+                        //Vai para a outra tela
+                        return;
+                    } 
+
+                }
+
+                //indica ao usuário que não há um cadastro com os dados passados
+                MessageBox.Show("Não há um usuário cadastrado com esses dados", "Erro no acesso", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+                AtualizarEstadoMsgBox();
             }
         }
 
         private void botaoApagar_Click(object sender, EventArgs e)
         {
-            BoxSenha.UseSystemPasswordChar = false;
-            BoxSenha.PasswordChar = '\0';
-
-            BoxNome.Text = "Nome de usuário";
-            BoxSenha.Text = "Senha";
-            
-
-            controlaClickNome = true;
-            controlaClickSenha = true;
+            AtualizarEstadoMsgBox();
 
         }
 
@@ -108,6 +113,17 @@ namespace InterfaceCupula
                 BoxSenha.Text = string.Empty;
                 controlaClickSenha = false;
             }
+        }
+
+        private void AtualizarEstadoMsgBox()
+        {
+
+            BoxNome.Text = "Nome do usuário";
+            BoxSenha.Text = "Senha";
+            controlaClickNome = true;
+            controlaClickSenha = true;
+            BoxSenha.UseSystemPasswordChar = false;
+            BoxSenha.PasswordChar = '\0';
         }
     }
 }

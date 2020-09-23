@@ -14,11 +14,11 @@ namespace InterfaceCupula.Controller
     {
 
 
-       public static String DBUsers()
+       public static List<Usuario> DBUsers()
         {
             string connStr = "server=localhost;user=root;database=domo;port=3306;password=subruno98";
             MySqlConnection myConection = new MySqlConnection(connStr);
-            String toReturn = null;
+            List<Usuario> toReturn = new List<Usuario>();
 
             try
             {
@@ -33,7 +33,7 @@ namespace InterfaceCupula.Controller
                 while (rdr.Read())
                 {
                     Console.WriteLine(rdr[0] + "-- " + rdr[1]);
-                    toReturn = rdr[1].ToString();
+                    toReturn.Add(new Usuario(rdr[0].ToString(), rdr[1].ToString(), rdr[2].ToString()));
                 }
                 rdr.Close();
             }
