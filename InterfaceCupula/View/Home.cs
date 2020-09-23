@@ -13,6 +13,7 @@ namespace InterfaceCupula.View
 {
     public partial class Home : Form
     {
+        Cadastro telaCadastro;
         public Home()
         {
             InitializeComponent();
@@ -59,12 +60,26 @@ namespace InterfaceCupula.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            telaCadastro = new Cadastro();
 
+            this.Hide();
+            telaCadastro.ShowDialog();
+            this.Close();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void painelEsquerdo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -24,7 +24,7 @@ namespace InterfaceCupula.Controller
             {
                 Console.WriteLine("Connectando ao banco");
                 myConection.Open();
-
+                
                 string query = "SELECT * FROM usuarios";
                 MySqlCommand newCmd = new MySqlCommand(query, myConection);
 
@@ -42,10 +42,55 @@ namespace InterfaceCupula.Controller
 
                 Console.WriteLine(e.Message);
             }
-            
+            myConection.Close();
             return toReturn;
         }
 
-       
+       public static bool userRegister(Usuario user)
+        {
+            string connStr = "server=localhost;user=root;database=domo;port=3306;password=subruno98";
+            MySqlConnection myConection = new MySqlConnection(connStr);
+
+            try
+            {
+               
+                myConection.Open();
+
+                string query = "SELECT * FROM usuarios where nome = '" + user.Nome + "' and senha = '" + user.Senha + "'" ;
+                MySqlCommand newCmd = new MySqlCommand(query, myConection);
+
+                MySqlDataReader rdr = newCmd.ExecuteReader();
+
+
+                
+             
+                if (rdr.Read() != false)          //se o banco já possui algum  usuário com as mesmas credenciais
+                {
+                    return true;
+                    
+                }
+                else
+                {
+                    rdr.Close();
+                    query = "INSERT INTO usuarios (nome, senha) VALUES( '" + user.Nome + "','" + user.Senha + "')";
+                    
+                    newCmd = new MySqlCommand(query, myConection);
+
+                    newCmd.Prepare();
+                    newCmd.ExecuteNonQuery();
+
+                    myConection.Close();
+                    return false;
+                }
+                
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+
+            return false;
+        }
     }
 }

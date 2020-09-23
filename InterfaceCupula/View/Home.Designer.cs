@@ -60,6 +60,7 @@
             this.painelEsquerdo.Name = "painelEsquerdo";
             this.painelEsquerdo.Size = new System.Drawing.Size(144, 328);
             this.painelEsquerdo.TabIndex = 0;
+            this.painelEsquerdo.Paint += new System.Windows.Forms.PaintEventHandler(this.painelEsquerdo_Paint);
             // 
             // textBox2
             // 
@@ -70,6 +71,7 @@
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(142, 27);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "Acesso ao inversor";
@@ -80,8 +82,9 @@
             this.VelocityControl.BackColor = System.Drawing.Color.Teal;
             this.VelocityControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.VelocityControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VelocityControl.Location = new System.Drawing.Point(9, 140);
+            this.VelocityControl.Location = new System.Drawing.Point(3, 140);
             this.VelocityControl.Name = "VelocityControl";
+            this.VelocityControl.ReadOnly = true;
             this.VelocityControl.Size = new System.Drawing.Size(128, 13);
             this.VelocityControl.TabIndex = 5;
             this.VelocityControl.Text = "Controle de velocidade";
@@ -117,7 +120,7 @@
             this.btnFw_Rv.Name = "btnFw_Rv";
             this.btnFw_Rv.Size = new System.Drawing.Size(134, 41);
             this.btnFw_Rv.TabIndex = 1;
-            this.btnFw_Rv.Text = "Frente/Tras";
+            this.btnFw_Rv.Text = "Horario/Antihorario";
             this.btnFw_Rv.UseVisualStyleBackColor = false;
             this.btnFw_Rv.Click += new System.EventHandler(this.btnFw_Rv_Click);
             // 
@@ -138,11 +141,12 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(340, 173);
+            this.textBox1.Location = new System.Drawing.Point(332, 176);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 46);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox3
             // 
@@ -163,6 +167,7 @@
             this.textBox4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(379, 415);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(100, 18);
             this.textBox4.TabIndex = 5;
             this.textBox4.Text = "Acesso por:";

@@ -24,3 +24,4 @@ C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\bin\Debug\Sy
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\bin\Debug\MySql.Data.xml
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.exe.config
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.csproj.CopyComplete
+C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.View.Cadastro.resources

@@ -16,20 +16,18 @@ namespace InterfaceCupula
         /// </summary>
     
         static Usuario userLogged;
+        static Inversor inversorObj;
 
         static void Main()
         {   
             
-          
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
 
             Form1 telaLogin = new Form1();
         
             Application.Run(telaLogin);
-           
-     
+                
         }
 
         public static Usuario getUserLogged()
@@ -40,6 +38,17 @@ namespace InterfaceCupula
         public static void setUserLogged(Usuario user)
         {
             userLogged = new Usuario(user.userId, user.Nome, user.Senha);
+        }
+
+        public static Inversor getInversor()
+        {
+            return inversorObj;
+        }
+
+        public static void setInversor(Inversor inv)
+        {
+
+            inversorObj = new Inversor(inv.GiraPara, inv.Habilita, inv.DirEsq, inv.ControleVelocidade);
         }
     }
 }

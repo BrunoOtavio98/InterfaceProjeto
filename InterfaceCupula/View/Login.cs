@@ -69,7 +69,7 @@ namespace InterfaceCupula
                 if (!logginState)
                 {
                     //indica ao usuário que não há um cadastro com os dados passados
-                    MessageBox.Show("Não há um usuário cadastrado com esses dados", "Erro no acesso", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Não há um usuário cadastrado com esses dados", "Erro no acesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     AtualizarEstadoMsgBox();
                 }
             }
