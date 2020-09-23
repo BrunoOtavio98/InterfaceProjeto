@@ -28,20 +28,221 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            this.painelEsquerdo = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.VelocityControl = new System.Windows.Forms.TextBox();
+            this.ajusteVelocidade = new System.Windows.Forms.TrackBar();
+            this.btnHabilita = new System.Windows.Forms.Button();
+            this.btnFw_Rv = new System.Windows.Forms.Button();
+            this.btnStart_Stop = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.painelEsquerdo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ajusteVelocidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // painelEsquerdo
+            // 
+            this.painelEsquerdo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.painelEsquerdo.Controls.Add(this.textBox2);
+            this.painelEsquerdo.Controls.Add(this.VelocityControl);
+            this.painelEsquerdo.Controls.Add(this.ajusteVelocidade);
+            this.painelEsquerdo.Controls.Add(this.btnHabilita);
+            this.painelEsquerdo.Controls.Add(this.btnFw_Rv);
+            this.painelEsquerdo.Controls.Add(this.btnStart_Stop);
+            this.painelEsquerdo.Location = new System.Drawing.Point(0, 0);
+            this.painelEsquerdo.Name = "painelEsquerdo";
+            this.painelEsquerdo.Size = new System.Drawing.Size(144, 328);
+            this.painelEsquerdo.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Teal;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox2.Location = new System.Drawing.Point(0, 0);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(142, 27);
+            this.textBox2.TabIndex = 6;
+            this.textBox2.Text = "Acesso ao inversor";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // VelocityControl
+            // 
+            this.VelocityControl.BackColor = System.Drawing.Color.Teal;
+            this.VelocityControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VelocityControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VelocityControl.Location = new System.Drawing.Point(9, 140);
+            this.VelocityControl.Name = "VelocityControl";
+            this.VelocityControl.Size = new System.Drawing.Size(128, 13);
+            this.VelocityControl.TabIndex = 5;
+            this.VelocityControl.Text = "Controle de velocidade";
+            this.VelocityControl.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // ajusteVelocidade
+            // 
+            this.ajusteVelocidade.Location = new System.Drawing.Point(12, 89);
+            this.ajusteVelocidade.Name = "ajusteVelocidade";
+            this.ajusteVelocidade.Size = new System.Drawing.Size(104, 45);
+            this.ajusteVelocidade.TabIndex = 4;
+            this.ajusteVelocidade.Scroll += new System.EventHandler(this.ajusteVelocidade_Scroll);
+            // 
+            // btnHabilita
+            // 
+            this.btnHabilita.BackColor = System.Drawing.Color.Teal;
+            this.btnHabilita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHabilita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabilita.Location = new System.Drawing.Point(3, 265);
+            this.btnHabilita.Name = "btnHabilita";
+            this.btnHabilita.Size = new System.Drawing.Size(134, 38);
+            this.btnHabilita.TabIndex = 2;
+            this.btnHabilita.Text = "HabilitaGeral";
+            this.btnHabilita.UseVisualStyleBackColor = false;
+            this.btnHabilita.Click += new System.EventHandler(this.btnHabilita_Click);
+            // 
+            // btnFw_Rv
+            // 
+            this.btnFw_Rv.BackColor = System.Drawing.Color.Teal;
+            this.btnFw_Rv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFw_Rv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFw_Rv.Location = new System.Drawing.Point(3, 218);
+            this.btnFw_Rv.Name = "btnFw_Rv";
+            this.btnFw_Rv.Size = new System.Drawing.Size(134, 41);
+            this.btnFw_Rv.TabIndex = 1;
+            this.btnFw_Rv.Text = "Frente/Tras";
+            this.btnFw_Rv.UseVisualStyleBackColor = false;
+            this.btnFw_Rv.Click += new System.EventHandler(this.btnFw_Rv_Click);
+            // 
+            // btnStart_Stop
+            // 
+            this.btnStart_Stop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart_Stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart_Stop.ForeColor = System.Drawing.Color.Black;
+            this.btnStart_Stop.Location = new System.Drawing.Point(3, 175);
+            this.btnStart_Stop.Name = "btnStart_Stop";
+            this.btnStart_Stop.Size = new System.Drawing.Size(134, 37);
+            this.btnStart_Stop.TabIndex = 0;
+            this.btnStart_Stop.Text = "Gira/Para";
+            this.btnStart_Stop.UseVisualStyleBackColor = true;
+            this.btnStart_Stop.Click += new System.EventHandler(this.btnSt_Stop_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(340, 173);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 46);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Teal;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(379, 441);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(170, 16);
+            this.textBox3.TabIndex = 4;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Teal;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(379, 415);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 18);
+            this.textBox4.TabIndex = 5;
+            this.textBox4.Text = "Acesso por:";
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackgroundImage = global::InterfaceCupula.Properties.Resources.Webp4;
+            this.btnRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegister.Location = new System.Drawing.Point(4, 401);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(64, 53);
+            this.btnRegister.TabIndex = 6;
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::InterfaceCupula.Properties.Resources.Webp3;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.Location = new System.Drawing.Point(80, 401);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(64, 53);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InterfaceCupula.Properties.Resources.Webp2;
+            this.pictureBox1.Location = new System.Drawing.Point(244, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(291, 353);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(551, 464);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.painelEsquerdo);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(567, 503);
             this.Name = "Home";
-            this.Text = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Controle do inversor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Home_Load);
+            this.painelEsquerdo.ResumeLayout(false);
+            this.painelEsquerdo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ajusteVelocidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel painelEsquerdo;
+        private System.Windows.Forms.Button btnStart_Stop;
+        private System.Windows.Forms.Button btnHabilita;
+        private System.Windows.Forms.Button btnFw_Rv;
+        private System.Windows.Forms.TextBox VelocityControl;
+        private System.Windows.Forms.TrackBar ajusteVelocidade;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InterfaceCupula.Controller;
 using InterfaceCupula.Models;
+using InterfaceCupula.View;
+
 
 namespace InterfaceCupula
 {
@@ -16,6 +18,9 @@ namespace InterfaceCupula
     {
         bool controlaClickNome = true;
         bool controlaClickSenha = true;
+        bool logginState = false;
+        Home telaHome;
+
 
         public Form1()
         {
@@ -49,17 +54,24 @@ namespace InterfaceCupula
                     if (user.Nome.Equals(BoxNome.Text) && user.Senha.Equals(BoxSenha.Text))
                     {
 
-
+                      
                         //Vai para a outra tela
-                        return;
+                        Program.setUserLogged(user);
+                        telaHome = new Home();
+
+                        this.Hide();
+                        telaHome.ShowDialog();
+                        logginState = true;
+                        this.Close();
                     } 
 
                 }
-
-                //indica ao usuário que não há um cadastro com os dados passados
-                MessageBox.Show("Não há um usuário cadastrado com esses dados", "Erro no acesso", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-
-                AtualizarEstadoMsgBox();
+                if (!logginState)
+                {
+                    //indica ao usuário que não há um cadastro com os dados passados
+                    MessageBox.Show("Não há um usuário cadastrado com esses dados", "Erro no acesso", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    AtualizarEstadoMsgBox();
+                }
             }
         }
 
@@ -69,6 +81,7 @@ namespace InterfaceCupula
 
         }
 
+        
     
   
         private void BoxNome_TextChanged(object sender, EventArgs e)
@@ -124,6 +137,11 @@ namespace InterfaceCupula
             controlaClickSenha = true;
             BoxSenha.UseSystemPasswordChar = false;
             BoxSenha.PasswordChar = '\0';
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

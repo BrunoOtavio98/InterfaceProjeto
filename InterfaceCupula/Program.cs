@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InterfaceCupula.Controller;
+using InterfaceCupula.View;
+using InterfaceCupula.Models;
 
 namespace InterfaceCupula
 {
@@ -12,14 +14,32 @@ namespace InterfaceCupula
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+    
+        static Usuario userLogged;
 
+        static void Main()
+        {   
             
+          
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(true);
+
+            Form1 telaLogin = new Form1();
+        
+            Application.Run(telaLogin);
+           
+     
+        }
+
+        public static Usuario getUserLogged()
+        {
+            return userLogged;
+        }
+
+        public static void setUserLogged(Usuario user)
+        {
+            userLogged = new Usuario(user.userId, user.Nome, user.Senha);
         }
     }
 }
