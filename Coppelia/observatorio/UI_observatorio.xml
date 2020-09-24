@@ -1,0 +1,82 @@
+<ui closeable="true" on-close="eventoFechar" resizable="false">
+    <label
+        text="Sistema de controle Cúpula OAUEPG"
+        wordwrap="true"
+    />
+    <tabs>
+        <tab    title="Controles"
+                style="background-image: url('&imgBkg');
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        background-size: cover;"
+        >
+            <group layout="hbox" flat="true" style= "background-image: url('');">
+                <group layout="vbox">
+                    <group layout="grid" flat="true">
+                        <label text="Trapeira: " />
+                        <label id="101" text="-trap" />
+                        <br/>
+                        <label text="Azimute cupula (deg): " />
+                        <label id="102" text="-azm" />
+                        <br/>
+                        <label text="Posicao Home: " />
+                        <label id="103" text="-home" />
+                        <br/>
+                        <label text="Posicao Park: " />
+                        <label id="104" text="-home" />
+                        <br/>
+                        <label text="Janela de movimento (deg): " />
+                        <label id="105" text="-home" />
+                        <br/>
+                    </group>
+                </group>
+                <group layout="vbox" flat="true">
+                    <group layout="grid" flat="true">
+                        <checkbox text="Habilitar comandos remotos (MQTT)" on-change="checkboxMQTT"  />
+                        <br/>
+                        <checkbox id="1001" text="Sincronizar com telescopio" on-change="checkboxSincTele"  />
+                    </group>
+                </group>
+            </group>
+
+            <group id="1000" layout="vbox" flat="true" style= "background-image: url('');">
+                <group layout="vbox" >
+                    <group layout="hbox" flat="true">
+                        <group layout="vbox" flat="true">
+                        </group>  
+                        <group layout="vbox" flat="true">
+                            <button id="10" text="    Acionar trapeira    " on-click="btnTrapeiraClick" style="font-size:15px;font-weight:bold;text-align:center;"/>
+                        </group> 
+                        <group layout="vbox" flat="true">
+                        </group>  
+                    </group>
+                    <group layout="hbox" flat="true">
+                        <group layout="vbox" flat="true"> 
+                            <button id="12" text="Girar Anti-horário" on-click="btnGiraAH" style="font-size:15px;font-weight:bold;"/>	
+                        </group>  
+                        <group layout="vbox" flat="true">
+                            <button id="13" text="   Girar Horário  " on-click="btnGiraH" style="font-size:15px;font-weight:bold;"/>
+                        </group> 
+                    </group> 
+                    <group layout="hbox" flat="true">           
+                        <group layout="vbox" flat="true">
+                        </group>  
+                        <label style="font-size:15px;font-weight:bold;text-align:center;" text="Azimute destino" />
+                        <group layout="grid" flat="true">                  
+                           <spinbox id="14" minimum="0" maximum="359" style="font-size:15px;font-weight:bold;" />
+                           <button id="15" text="Ir" on-click="btnAzmDest" style="font-size:15px;font-weight:bold;"/>
+                        </group> 
+                        <group layout="vbox" flat="true">
+                        </group>  
+                    </group>
+                </group>
+            </group> 
+            <group layout="vbox" flat="true" style= "background-image: url('');">
+                
+            </group>
+            </tab>
+        <tab title="Configuracoes">
+
+        </tab>
+    </tabs>
+</ui>
