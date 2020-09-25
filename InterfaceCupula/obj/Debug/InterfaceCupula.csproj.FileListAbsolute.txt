@@ -25,3 +25,4 @@ C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\bin\Debug\My
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.exe.config
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.csproj.CopyComplete
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.View.Cadastro.resources
+C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\bin\Debug\MQTTnet.dll

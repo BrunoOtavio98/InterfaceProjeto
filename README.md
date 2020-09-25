@@ -1,0 +1,1 @@
+Interface do projeto de automação da cúpula do Observatório da Universidade Estadual de Ponta Grossa, utilizando MQTT.

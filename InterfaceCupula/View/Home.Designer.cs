@@ -78,24 +78,25 @@
             this.btnControleVelocidade.Name = "btnControleVelocidade";
             this.btnControleVelocidade.Size = new System.Drawing.Size(142, 35);
             this.btnControleVelocidade.TabIndex = 8;
-            this.btnControleVelocidade.Text = "Controle Velocidade";
+            this.btnControleVelocidade.Text = "Ajustar Velocidade";
             this.btnControleVelocidade.UseVisualStyleBackColor = false;
             this.btnControleVelocidade.Click += new System.EventHandler(this.btn_ControleVelocidade);
             this.btnControleVelocidade.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_ControleVelocidade);
             // 
             // boxControleVel
             // 
-            this.boxControleVel.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.boxControleVel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxControleVel.BackColor = System.Drawing.Color.Honeydew;
+            this.boxControleVel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxControleVel.ForeColor = System.Drawing.Color.Black;
             this.boxControleVel.Location = new System.Drawing.Point(0, 24);
             this.boxControleVel.Name = "boxControleVel";
             this.boxControleVel.Size = new System.Drawing.Size(144, 23);
             this.boxControleVel.TabIndex = 7;
+            this.boxControleVel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Teal;
+            this.textBox2.BackColor = System.Drawing.Color.Aquamarine;
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -270,7 +271,7 @@
             // 
             // textBoxTrapeira
             // 
-            this.textBoxTrapeira.BackColor = System.Drawing.Color.Teal;
+            this.textBoxTrapeira.BackColor = System.Drawing.Color.Aquamarine;
             this.textBoxTrapeira.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBoxTrapeira.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTrapeira.Location = new System.Drawing.Point(0, 0);
@@ -297,10 +298,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.painelEsquerdo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(567, 503);
             this.Name = "Home";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle do inversor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -324,7 +328,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox textoPainel;
+        public System.Windows.Forms.TextBox textoPainel;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnRegister;

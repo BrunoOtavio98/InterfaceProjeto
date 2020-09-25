@@ -19,7 +19,6 @@ namespace InterfaceCupula.Models
 
         public Inversor(bool gira_para, bool habilita, bool dir_esq, float controleVel)
         {
-
             GiraPara = gira_para;
             Habilita = habilita;
             DirEsq = dir_esq;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InterfaceCupula;
+using InterfaceCupula.Controller;
 
 namespace InterfaceCupula.View
 {
@@ -15,16 +16,22 @@ namespace InterfaceCupula.View
     {
         Cadastro telaCadastro;
         bool shutterState = false;
-   
+        MQTTConnection mqttConnecion;
+        String receivedMessage;
+       
+
         public Home()
         {
             InitializeComponent();
+            mqttConnecion =  new MQTTConnection(ref receivedMessage);
 
+              
             msgShutter.Text = "Fechada";
             textBox3.Text = Program.getUserLogged().Nome;
 
             textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horario";
 
+            mqttConnecion.StartConnection("broker.hivemq.com", 1883, "topicBruno");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -39,11 +46,14 @@ namespace InterfaceCupula.View
 
         private void btnHabilita_Click(object sender, EventArgs e)
         {
+
+            Console.WriteLine(receivedMessage);
             Program.inversorObj.Habilita = !Program.inversorObj.Habilita;
 
             if (!Program.inversorObj.Habilita)
             {
                 textoPainel.Text = "Desabilitado";
+                mqttConnecion.PublishAsync(textoPainel.Text);
             }
             else
             {
@@ -51,14 +61,14 @@ namespace InterfaceCupula.View
                 {
                     textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horário";
 
+                    
                 }
                 else
                 {
                     textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Anti-horário";
+                   
                 }
-
             }
-
         }
 
         private void btnSt_Stop_Click(object sender, EventArgs e)
@@ -70,6 +80,7 @@ namespace InterfaceCupula.View
                 if (!Program.inversorObj.GiraPara)
                 {
                     textoPainel.Text = "Parado";
+                    mqttConnecion.PublishAsync(textoPainel.Text);
                 }
                 else
                 {
@@ -100,21 +111,17 @@ namespace InterfaceCupula.View
                     if (Program.inversorObj.DirEsq)
                     {
                         textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horário";
+                        mqttConnecion.PublishAsync(textoPainel.Text);
                     }
                     else
                     {
                         textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Anti-horário";
+                        mqttConnecion.PublishAsync(textoPainel.Text);
                     }
 
                 }
             }
         }
-
-        private void ajusteVelocidade_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -123,9 +130,7 @@ namespace InterfaceCupula.View
             telaLogin.ShowDialog();
             this.Close();
         }
-
-
-     
+                    
         private void btnRegister_Click(object sender, EventArgs e)
         {
             telaCadastro = new Cadastro();

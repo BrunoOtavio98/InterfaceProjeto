@@ -16,6 +16,7 @@ namespace InterfaceCupula
         /// </summary>
     
         static Usuario userLogged;
+
         public static Inversor inversorObj = new Inversor(true,true,true,0.0f);
 
         static void Main()
