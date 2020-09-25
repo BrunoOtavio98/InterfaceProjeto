@@ -22,22 +22,17 @@ namespace InterfaceCupula.Controller
         IMqttClient mqttclient;
         System.Threading.CancellationToken cancellationToken;           //connect to the broker
 
-        string inversorText;
+        string msg;
         string server;
         string topic;
         int port;
-
-        public MQTTConnection(ref string text)
-        {
-            inversorText = text;
-        }
+        bool newMessageFlag = true;
 
         public async void StartConnection(string server, int port, string topic)
         {
 
  
             var options = new MqttClientOptionsBuilder()
-                .WithClientId("clientId-l1OXj2ii5Y")
                 .WithTcpServer(server, port)
                 .Build();
 
@@ -56,12 +51,23 @@ namespace InterfaceCupula.Controller
         
             mqttclient.UseApplicationMessageReceivedHandler(e =>
             {
-                inversorText = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                msg = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                newMessageFlag = !newMessageFlag;
                 Task.Run(() => mqttclient.PublishAsync("hello/world"));
             });
         
         }
         
+        public bool getMessageFlag()
+        {
+            return newMessageFlag;
+        }
+
+        public string getMsg()
+        {
+            return msg;
+        }
+
         public async Task PublishAsync(string payload)
         {
             var message = new MqttApplicationMessageBuilder()

@@ -15,23 +15,65 @@ namespace InterfaceCupula.View
     public partial class Home : Form
     {
         Cadastro telaCadastro;
+
         bool shutterState = false;
-        MQTTConnection mqttConnecion;
-        String receivedMessage;
-       
+        bool lastMsgReceivedFlag = true;
+        bool mqttenabled = false;
+
+        MQTTConnection mqttConnectionShutter;
+        MQTTConnection mqttConnectionAH;
+        MQTTConnection mqttConnectionH;
+        MQTTConnection mqttConnectionAzm;
+        MQTTConnection mqttConnectionSinc;
+
+        MQTTConnection mqttConnectionCmdExterno;
+        MQTTConnection mqttConnectioninfoTrapeira;
+        MQTTConnection mqttConnectioninfoAzmDomo;
+        MQTTConnection mqttConnectioninfoPosHome;
+        MQTTConnection mqttConnectioninfoPosPark;
+        MQTTConnection mqttConnectioninfoResolucao;
+        MQTTConnection mqttConnectioninfoSincTelescopio;
+        MQTTConnection mqttConnectioninfoPosTelescopio;
+        MQTTConnection mqttConnectioninfoVelDomo;
+      
 
         public Home()
         {
             InitializeComponent();
-            mqttConnecion =  new MQTTConnection(ref receivedMessage);
 
-              
-            msgShutter.Text = "Fechada";
+            mqttConnectionShutter                 = new MQTTConnection();
+            mqttConnectionAH                      = new MQTTConnection();
+            mqttConnectionH                       = new MQTTConnection();
+            mqttConnectionAzm                     = new MQTTConnection();
+            mqttConnectionSinc                    = new MQTTConnection();
+            mqttConnectionCmdExterno              = new MQTTConnection();
+            mqttConnectioninfoTrapeira            = new MQTTConnection();
+            mqttConnectioninfoAzmDomo             = new MQTTConnection();
+            mqttConnectioninfoPosHome             = new MQTTConnection();
+            mqttConnectioninfoPosPark             = new MQTTConnection();
+            mqttConnectioninfoResolucao           = new MQTTConnection();
+            mqttConnectioninfoSincTelescopio      = new MQTTConnection();
+            mqttConnectioninfoPosTelescopio       = new MQTTConnection();
+            mqttConnectioninfoVelDomo             = new MQTTConnection();
+
+
             textBox3.Text = Program.getUserLogged().Nome;
 
-            textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horario";
+            mqttConnectionShutter.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnTrapeira");
+            mqttConnectionAH.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnAHorario");
+            mqttConnectionH.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnHorario");
+            mqttConnectionAzm.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.azmDestino");
+            mqttConnectionSinc.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnSincTelescopio");
 
-            mqttConnecion.StartConnection("broker.hivemq.com", 1883, "topicBruno");
+            mqttConnectionCmdExterno.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.cmdExterno");
+            mqttConnectioninfoTrapeira.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoTrapeira");
+            mqttConnectioninfoAzmDomo.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoAzmDomo");
+            mqttConnectioninfoPosHome.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoPosHome");
+            mqttConnectioninfoPosPark.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoPosPark");
+            mqttConnectioninfoResolucao.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoResolucao");
+            mqttConnectioninfoSincTelescopio.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoSincTelescopio");
+            mqttConnectioninfoPosTelescopio.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoPosTelescopio");
+            mqttConnectioninfoVelDomo.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoVelDomo");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -43,87 +85,8 @@ namespace InterfaceCupula.View
         {
 
         }
-
-        private void btnHabilita_Click(object sender, EventArgs e)
-        {
-
-            Console.WriteLine(receivedMessage);
-            Program.inversorObj.Habilita = !Program.inversorObj.Habilita;
-
-            if (!Program.inversorObj.Habilita)
-            {
-                textoPainel.Text = "Desabilitado";
-                mqttConnecion.PublishAsync(textoPainel.Text);
-            }
-            else
-            {
-                if (Program.inversorObj.DirEsq)
-                {
-                    textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horário";
-
-                    
-                }
-                else
-                {
-                    textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Anti-horário";
-                   
-                }
-            }
-        }
-
-        private void btnSt_Stop_Click(object sender, EventArgs e)
-        {
-            Program.inversorObj.GiraPara = !Program.inversorObj.GiraPara;
-
-            if (Program.inversorObj.Habilita)
-            {
-                if (!Program.inversorObj.GiraPara)
-                {
-                    textoPainel.Text = "Parado";
-                    mqttConnecion.PublishAsync(textoPainel.Text);
-                }
-                else
-                {
-                    if (Program.inversorObj.DirEsq)
-                    {
-                        textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horário";
-
-                    }
-                    else
-                    {
-                        textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Anti-horário";
-                    }
-
-                }
-            }
-        }
-
-        private void btnFw_Rv_Click(object sender, EventArgs e)
-        {
-
-            if (Program.inversorObj.Habilita)
-            {
-
-                if (Program.inversorObj.GiraPara)
-                {
-                    Program.inversorObj.DirEsq = !Program.inversorObj.DirEsq;
-
-                    if (Program.inversorObj.DirEsq)
-                    {
-                        textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horário";
-                        mqttConnecion.PublishAsync(textoPainel.Text);
-                    }
-                    else
-                    {
-                        textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Anti-horário";
-                        mqttConnecion.PublishAsync(textoPainel.Text);
-                    }
-
-                }
-            }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
+            
+         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 telaLogin = new Form1();
@@ -156,81 +119,178 @@ namespace InterfaceCupula.View
 
         }
 
-        private void btn_ControleVelocidade(object sender, MouseEventArgs e)
-        {
-            float value;
-
-            try
-            {
-                value = float.Parse(boxControleVel.Text);
-
-                if (value > 66.0)
-                    value = 66.0f;
-                else if (value < 0)
-                    value = 0.0f;
-            }
-            catch (Exception)
-            {
-
-                value = 0.0f;
-            }
-            Program.inversorObj.ControleVelocidade = value;
-        }
-
-        private void btn_ControleVelocidade(object sender, EventArgs e)
-        {
-            float value;
-
-            try
-            {
-                value = float.Parse(boxControleVel.Text);
-
-                if (value > 66.0)
-                    value = 66.0f;
-                else if (value < 0)
-                    value = 0.0f;
-            }
-            catch (Exception)
-            {
-                value = Program.inversorObj.ControleVelocidade;
-                
-            }
-            Program.inversorObj.ControleVelocidade = value;
-
-            if (Program.inversorObj.Habilita)
-            {
-
-                if (Program.inversorObj.GiraPara)
-                {
-                    
-                    if (Program.inversorObj.DirEsq)
-                    {
-                        textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Horário";
-                    }
-                    else
-                    {
-                        textoPainel.Text = Program.inversorObj.ControleVelocidade + "Hz - Anti-horário";
-                    }
-
-                }
-            }
-
-
-        }
-
         private void OpClShutter_Click(object sender, EventArgs e)
         {
             shutterState = !shutterState;
+            String toSend;
 
-            if (shutterState)
+            toSend = "1";
+
+            try
             {
-                msgShutter.Text = "Aberta";
+                mqttConnectionShutter.PublishAsync(toSend);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+    
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            /*
+            if (mqttConnecionShutter.getMessageFlag() != lastMsgReceivedFlag)
+            {
+                mqttenabled = false;
+                lastMsgReceivedFlag = mqttConnecionShutter.getMessageFlag();
+              //  textoPainel.Text = mqttConnecion.getMsg();
             }
             else
             {
-                msgShutter.Text = "Fechada";
+                mqttenabled = true;
+            }*/
+            try
+            {
+                if (mqttConnectionCmdExterno.getMsg().Equals("1"))
+                {
+                    comandosMQTT.Checked = true;
+                    comandosMQTT.Checked = true;
+                    OpClShutter.Enabled = true;
+                    btnRev.Enabled = true;
+                    btnFw.Enabled = true;
+                    Go.Enabled = true;
+                    azimuteChange.Enabled = true;
+
+                  
+                }
+                else
+                {
+                    comandosMQTT.Checked = false;
+                    OpClShutter.Enabled = false;
+                    btnRev.Enabled = false;
+                    btnFw.Enabled = false;
+                    Go.Enabled = false;
+                    azimuteChange.Enabled = false;
+
+                    if (mqttConnectioninfoSincTelescopio.getMsg().Equals("1"))
+                    {
+                        sincronizarTel.Checked = true;
+                    }
+                    else
+                    {
+                        sincronizarTel.Checked = false;
+                    }
+
+                }
+
+                if (mqttConnectioninfoTrapeira.getMsg().Equals("1"))
+                {
+                    msgShutter.Text = "Aberta";
+                }
+                else if (mqttConnectioninfoTrapeira.getMsg().Equals("2"))
+                {
+                    msgShutter.Text = "Aguardando";
+                }
+                else
+                {
+                    msgShutter.Text = "Fechada";
+                }
+
+                
+                msgAzimute.Text = mqttConnectioninfoAzmDomo.getMsg() + ".0";
+                msgPosHome.Text = convertBooleanToString(mqttConnectioninfoPosHome.getMsg());
+                msgPark.Text = convertBooleanToString(mqttConnectioninfoPosPark.getMsg());
+                msgResol.Text = mqttConnectioninfoResolucao.getMsg() + ".0";
+
+
+                
+
+            }
+            catch (Exception)
+            {
+
             }
 
+        }
+
+        private void textBoxTrapeira_TextChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRev_Click(object sender, EventArgs e)
+        {
+            mqttConnectionAH.PublishAsync("1");
+
+        }
+        private void btnFwr_Click(object sender, EventArgs e)
+        {
+            mqttConnectionH.PublishAsync("1");
+        }
+
+        private void msgPark_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void azimuteChange_SelectedItemChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comandosMQTT_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void sincronizarTel_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if(sincronizarTel.Checked)
+            {
+                mqttConnectionSinc.PublishAsync("1");
+                sincronizarTel.Checked = true;
+            }
+            else
+            {
+                mqttConnectionSinc.PublishAsync("0");
+                sincronizarTel.Checked = false;
+            }
+
+        }
+
+        private void Go_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string convertBooleanToString(string toConvert)
+        {
+            if (toConvert.Equals("1"))
+            {
+                return "Sim";
+            }
+            else
+            {
+                return "Não";
+            }
         }
     }
 }
