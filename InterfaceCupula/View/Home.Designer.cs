@@ -50,8 +50,8 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.azimuteChange = new System.Windows.Forms.NumericUpDown();
             this.Go = new System.Windows.Forms.Button();
-            this.azimuteChange = new System.Windows.Forms.DomainUpDown();
             this.OpClShutter = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,6 +59,7 @@
             this.sincronizarTel = new System.Windows.Forms.CheckBox();
             this.painelEsquerdo.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.azimuteChange)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -310,8 +311,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.Go);
             this.panel1.Controls.Add(this.azimuteChange);
+            this.panel1.Controls.Add(this.Go);
             this.panel1.Controls.Add(this.OpClShutter);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.btnFw);
@@ -320,6 +321,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(521, 140);
             this.panel1.TabIndex = 8;
+            // 
+            // azimuteChange
+            // 
+            this.azimuteChange.Location = new System.Drawing.Point(247, 94);
+            this.azimuteChange.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.azimuteChange.Name = "azimuteChange";
+            this.azimuteChange.Size = new System.Drawing.Size(51, 20);
+            this.azimuteChange.TabIndex = 12;
+            this.azimuteChange.TabStop = false;
+            this.azimuteChange.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.azimuteChange.KeyDown += new System.Windows.Forms.KeyEventHandler(this.azimuteChange_KeyDown);
+            this.azimuteChange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.azimuteChange_KeyPress);
+            this.azimuteChange.KeyUp += new System.Windows.Forms.KeyEventHandler(this.azimuteChange_KeyUp);
             // 
             // Go
             // 
@@ -333,14 +351,6 @@
             this.Go.Text = "Ir";
             this.Go.UseVisualStyleBackColor = false;
             this.Go.Click += new System.EventHandler(this.Go_Click);
-            // 
-            // azimuteChange
-            // 
-            this.azimuteChange.Location = new System.Drawing.Point(247, 97);
-            this.azimuteChange.Name = "azimuteChange";
-            this.azimuteChange.Size = new System.Drawing.Size(44, 20);
-            this.azimuteChange.TabIndex = 7;
-            this.azimuteChange.SelectedItemChanged += new System.EventHandler(this.azimuteChange_SelectedItemChanged);
             // 
             // OpClShutter
             // 
@@ -427,6 +437,7 @@
             this.painelEsquerdo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.azimuteChange)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -459,9 +470,9 @@
         private System.Windows.Forms.TextBox msgPark;
         private System.Windows.Forms.TextBox msgPosHome;
         private System.Windows.Forms.Button Go;
-        private System.Windows.Forms.DomainUpDown azimuteChange;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox comandosMQTT;
         private System.Windows.Forms.CheckBox sincronizarTel;
+        private System.Windows.Forms.NumericUpDown azimuteChange;
     }
 }

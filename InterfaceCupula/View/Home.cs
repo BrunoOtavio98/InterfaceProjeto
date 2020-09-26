@@ -17,8 +17,8 @@ namespace InterfaceCupula.View
         Cadastro telaCadastro;
 
         bool shutterState = false;
-        bool lastMsgReceivedFlag = true;
-        bool mqttenabled = false;
+        int antigo_valor = 0;
+
 
         MQTTConnection mqttConnectionShutter;
         MQTTConnection mqttConnectionAH;
@@ -157,13 +157,18 @@ namespace InterfaceCupula.View
             {
                 if (mqttConnectionCmdExterno.getMsg().Equals("1"))
                 {
-                    comandosMQTT.Checked = true;
-                    comandosMQTT.Checked = true;
-                    OpClShutter.Enabled = true;
-                    btnRev.Enabled = true;
-                    btnFw.Enabled = true;
-                    Go.Enabled = true;
-                    azimuteChange.Enabled = true;
+
+                    if (mqttConnectioninfoSincTelescopio.getMsg().Equals("1"))
+                    {
+                        comandosMQTT.Checked = true;
+                        comandosMQTT.Checked = true;
+                        OpClShutter.Enabled = true;
+                        btnRev.Enabled = true;
+                        btnFw.Enabled = true;
+                        Go.Enabled = true;
+                        azimuteChange.Enabled = true;
+
+                    }
 
                   
                 }
@@ -205,10 +210,6 @@ namespace InterfaceCupula.View
                 msgPosHome.Text = convertBooleanToString(mqttConnectioninfoPosHome.getMsg());
                 msgPark.Text = convertBooleanToString(mqttConnectioninfoPosPark.getMsg());
                 msgResol.Text = mqttConnectioninfoResolucao.getMsg() + ".0";
-
-
-                
-
             }
             catch (Exception)
             {
@@ -242,12 +243,7 @@ namespace InterfaceCupula.View
         private void msgPark_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void azimuteChange_SelectedItemChanged(object sender, EventArgs e)
-        {
-            
-        }
+        }    
 
         private void comandosMQTT_CheckedChanged(object sender, EventArgs e)
         {
@@ -273,6 +269,7 @@ namespace InterfaceCupula.View
 
         private void Go_Click(object sender, EventArgs e)
         {
+            mqttConnectionAzm.PublishAsync(azimuteChange.Value.ToString());
 
         }
 
@@ -290,6 +287,35 @@ namespace InterfaceCupula.View
             else
             {
                 return "Não";
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void azimuteChange_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+
+        }
+
+        private void azimuteChange_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void azimuteChange_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (int.Parse(azimuteChange.Value.ToString()) > 359)
+            {
+                azimuteChange.Value = Decimal.Parse(antigo_valor.ToString());
+            }
+            else
+            {
+                antigo_valor = int.Parse(azimuteChange.Value.ToString());
+
             }
         }
     }
