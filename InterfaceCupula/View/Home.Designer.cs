@@ -430,7 +430,7 @@
             this.Name = "Home";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Controle do inversor";
+            this.Text = "Controle domo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             this.painelEsquerdo.ResumeLayout(false);

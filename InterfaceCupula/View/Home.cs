@@ -158,7 +158,7 @@ namespace InterfaceCupula.View
                 if (mqttConnectionCmdExterno.getMsg().Equals("1"))
                 {
 
-                    if (mqttConnectioninfoSincTelescopio.getMsg().Equals("1"))
+                    if (mqttConnectioninfoSincTelescopio.getMsg().Equals("0"))
                     {
                         comandosMQTT.Checked = true;
                         comandosMQTT.Checked = true;
@@ -169,8 +169,6 @@ namespace InterfaceCupula.View
                         azimuteChange.Enabled = true;
 
                     }
-
-                  
                 }
                 else
                 {
