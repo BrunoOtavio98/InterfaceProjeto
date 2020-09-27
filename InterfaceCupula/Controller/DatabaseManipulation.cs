@@ -16,7 +16,7 @@ namespace InterfaceCupula.Controller
 
        public static List<Usuario> DBUsers()
         {
-            string connStr = "server=localhost;user=root;database=domo;port=3306;password=subruno98";
+            string connStr = "server=localhost;user=root;database=domo;port=3306;password=*****";
             MySqlConnection myConection = new MySqlConnection(connStr);
             List<Usuario> toReturn = new List<Usuario>();
 
@@ -55,8 +55,8 @@ namespace InterfaceCupula.Controller
             {
                
                 myConection.Open();
-
-                string query = "SELECT * FROM usuarios where nome = '" + user.Nome + "' and senha = '" + user.Senha + "'" ;
+                 
+                string query = "SELECT * FROM usuarios where nome = '" + user.Nome + "'and senha = MD5('" + user.Senha + "')" ;
                 MySqlCommand newCmd = new MySqlCommand(query, myConection);
 
                 MySqlDataReader rdr = newCmd.ExecuteReader();
@@ -72,7 +72,9 @@ namespace InterfaceCupula.Controller
                 else
                 {
                     rdr.Close();
-                    query = "INSERT INTO usuarios (nome, senha) VALUES( '" + user.Nome + "','" + user.Senha + "')";
+
+                    
+                    query = "INSERT INTO usuarios (nome, senha) VALUES('" + user.Nome + "', MD5('" + user.Senha + "'))";
                     
                     newCmd = new MySqlCommand(query, myConection);
 

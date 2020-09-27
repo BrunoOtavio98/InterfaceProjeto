@@ -105,7 +105,7 @@
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(100, 18);
             this.textBox9.TabIndex = 13;
-            this.textBox9.Text = "Posicao Park";
+            this.textBox9.Text = "Posicao Park:";
             // 
             // textBox8
             // 
@@ -117,7 +117,7 @@
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(100, 18);
             this.textBox8.TabIndex = 12;
-            this.textBox8.Text = "Posicao Home";
+            this.textBox8.Text = "Posicao Home:";
             // 
             // textBox7
             // 

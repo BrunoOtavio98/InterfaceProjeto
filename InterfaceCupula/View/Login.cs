@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using InterfaceCupula.Controller;
 using InterfaceCupula.Models;
 using InterfaceCupula.View;
-
+using System.Security.Cryptography;
 
 namespace InterfaceCupula
 {
@@ -45,16 +45,23 @@ namespace InterfaceCupula
             {
 
                 dataUsers = DatabaseManipulation.DBUsers();
-               
+
+                MD5 md5 = MD5.Create();
+                byte[] hashSenha;
+
+                hashSenha = md5.ComputeHash(Encoding.ASCII.GetBytes(BoxSenha.Text));
+
+                StringBuilder sBuilder = new StringBuilder();
+                foreach ( byte item in hashSenha)
+                {
+                    sBuilder.Append(item.ToString("x2"));
+                }
 
                 foreach (Usuario user in dataUsers)
                 {
-                   
-
-                    if (user.Nome.Equals(BoxNome.Text) && user.Senha.Equals(BoxSenha.Text))
+                    if (user.Nome.Equals(BoxNome.Text) && user.Senha.Equals(sBuilder.ToString()))
                     {
 
-                      
                         //Vai para a outra tela
                         Program.setUserLogged(user);
                         telaHome = new Home();
