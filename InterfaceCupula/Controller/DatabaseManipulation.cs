@@ -48,7 +48,7 @@ namespace InterfaceCupula.Controller
 
        public static bool userRegister(Usuario user)
         {
-            string connStr = "server=localhost;user=root;database=domo;port=3306;password=subruno98";
+            string connStr = "server=localhost;user=root;database=domo;port=3306;password=*****";
             MySqlConnection myConection = new MySqlConnection(connStr);
 
             try

@@ -46,17 +46,26 @@ namespace InterfaceCupula.View
         private void accept_Click(object sender, EventArgs e)
         {
             Usuario newUser = new Usuario(textBox1.Text, textBox3.Text);
-       
-            if (DatabaseManipulation.userRegister(newUser))              //se retornar true o usuario ja esta cadastrado
-            {
 
-                MessageBox.Show("Usuario já consta no sistema", "Mensagem cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox1.Text = "\0";
-                textBox3.Text = "\0";
+
+            if (textBox1.Text.Length > 0 && textBox3.Text.Length > 0)
+            {
+                if (DatabaseManipulation.userRegister(newUser))              //se retornar true o usuario ja esta cadastrado
+                {
+
+                    MessageBox.Show("Usuário já consta no sistema", "Mensagem cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox1.Text = "\0";
+                    textBox3.Text = "\0";
+                }
+                else
+                {
+                    MessageBox.Show("Cadastro efetuado", "Mensagem cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    returnInversorScreen();
+                }
             }
             else
             {
-                MessageBox.Show("Cadastro efetuado", "Mensagem cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Número de caracteres deve ser maior que zero", "Mensagem cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 returnInversorScreen();
             }
 
