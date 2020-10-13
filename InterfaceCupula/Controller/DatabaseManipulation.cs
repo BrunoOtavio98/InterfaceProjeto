@@ -66,8 +66,9 @@ namespace InterfaceCupula.Controller
                 }
                 else
                 {
+                    
                     rdr.Close();
-                    query = "INSERT INTO usuarios (nome, senha) VALUES('" + user.Nome + "', MD5('" + user.Senha + "'))";
+                    query = "INSERT INTO usuarios (nome, senha, TipoAcesso) VALUES('" + user.Nome + "', MD5('" + user.Senha + "'), " + (int)(user.TipoUsuario) + ")";
                     
                     newCmd = new MySqlCommand(query, myConection);
                     newCmd.Prepare();
@@ -132,7 +133,7 @@ namespace InterfaceCupula.Controller
                 
         
                 query = "update config_mqtt" +
-                        " set valor = '" + newVal + " ' " +
+                        " set valor = '" + newVal + "'" +
                         "where idconfig_mqtt = " + id;
 
                 newCmd = new MySqlCommand(query, myConection);

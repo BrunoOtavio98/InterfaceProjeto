@@ -96,6 +96,7 @@ namespace InterfaceCupula.View
             strCfgInfoPos = itens[14].valor;
             strCfgInfoVelDomo = itens[15].valor;
 
+
             mqttConnectionShutter.StartConnection(brokerConfig, mqttPort, strCfgShutter);
             mqttConnectionAH.StartConnection(brokerConfig, mqttPort, strCfgAH);
             mqttConnectionH.StartConnection(brokerConfig, mqttPort, strCfgH);

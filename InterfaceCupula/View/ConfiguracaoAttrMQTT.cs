@@ -17,6 +17,7 @@ namespace InterfaceCupula.View
 
         private int lastSelect = -1;
         private List<ConfigMqtt> atual_config;
+        private Cadastro telaCadastro;
         public ConfiguracaoAttrMQTT()
         {
             InitializeComponent();
@@ -49,14 +50,24 @@ namespace InterfaceCupula.View
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+            textTopico.Text = "Tópico atual";
+            textNovoTopico.Text = "Novo tópico";
+
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
+
+                    textTopico.Text = "Broker atual";
+                    textNovoTopico.Text = "Novo Broker";
+
                     textoTopicoAtual.Text = atual_config[0].valor;
                     lastSelect = 0;
                     break;
                 case 1:
+                    textTopico.Text = "Porta atual";
+                    textNovoTopico.Text = "Nova Porta";
+
                     textoTopicoAtual.Text = atual_config[1].valor;
                     lastSelect = 1;
                     break;
@@ -123,6 +134,7 @@ namespace InterfaceCupula.View
         private void btnMudar_Click(object sender, EventArgs e)
         {
             if (novoTopico.Text.Length > 0){
+             
             switch (lastSelect)
              {
                
@@ -132,7 +144,7 @@ namespace InterfaceCupula.View
                     DatabaseManipulation.changeConfigMqtt(atual_config[0].idconfig, atual_config[0].valor);
                 break;
                 case 1:
-                    atual_config[1].valor = novoTopico.Text;
+                        atual_config[1].valor = novoTopico.Text;
                     textoTopicoAtual.Text = novoTopico.Text;
                     DatabaseManipulation.changeConfigMqtt(atual_config[1].idconfig, atual_config[1].valor);
                 break;
@@ -212,6 +224,26 @@ namespace InterfaceCupula.View
         }
 
         private void novoTopico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            novoTopico.Text = " ";
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            telaCadastro = new Cadastro();
+
+            this.Hide();
+            telaCadastro.ShowDialog();
+            this.Close();
+
+        }
+
+        private void textTopico_TextChanged(object sender, EventArgs e)
         {
 
         }

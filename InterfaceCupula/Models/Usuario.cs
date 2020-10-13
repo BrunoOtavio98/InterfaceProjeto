@@ -9,11 +9,12 @@ namespace InterfaceCupula.Models
     class Usuario
     {
 
-        public Usuario(String nome, String senha)
+        public Usuario(String nome, String senha, TiposDeUsuarios tipoUsuario)
         {
 
             Nome = nome;
             Senha = senha;
+            TipoUsuario = tipoUsuario;
         }
 
         public Usuario(String id, String Nome, String Senha, TiposDeUsuarios tipoUsuario)

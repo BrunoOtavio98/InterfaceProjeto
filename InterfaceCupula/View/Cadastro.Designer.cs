@@ -35,6 +35,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.accept = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.checkBoxAdm = new System.Windows.Forms.CheckBox();
+            this.checkBoxUser = new System.Windows.Forms.CheckBox();
+            this.textBoxAdm = new System.Windows.Forms.TextBox();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // BoxCadastro
@@ -43,21 +47,19 @@
             this.BoxCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BoxCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxCadastro.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.BoxCadastro.Location = new System.Drawing.Point(18, 46);
-            this.BoxCadastro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BoxCadastro.Location = new System.Drawing.Point(12, 12);
             this.BoxCadastro.Name = "BoxCadastro";
             this.BoxCadastro.ReadOnly = true;
-            this.BoxCadastro.Size = new System.Drawing.Size(150, 13);
+            this.BoxCadastro.Size = new System.Drawing.Size(100, 13);
             this.BoxCadastro.TabIndex = 0;
             this.BoxCadastro.Text = "Nome do usuário";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 75);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Location = new System.Drawing.Point(12, 31);
             this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 26);
+            this.textBox1.Size = new System.Drawing.Size(109, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -67,22 +69,20 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox2.Location = new System.Drawing.Point(18, 131);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox2.Location = new System.Drawing.Point(12, 75);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(150, 13);
+            this.textBox2.Size = new System.Drawing.Size(100, 13);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "Senha";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(18, 160);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox3.Location = new System.Drawing.Point(12, 94);
             this.textBox3.MaxLength = 50;
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(162, 26);
+            this.textBox3.Size = new System.Drawing.Size(109, 20);
             this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -92,10 +92,9 @@
             this.accept.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.accept.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.accept.Location = new System.Drawing.Point(18, 245);
-            this.accept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.accept.Location = new System.Drawing.Point(12, 159);
             this.accept.Name = "accept";
-            this.accept.Size = new System.Drawing.Size(112, 35);
+            this.accept.Size = new System.Drawing.Size(88, 23);
             this.accept.TabIndex = 4;
             this.accept.Text = "Cadastrar";
             this.accept.UseVisualStyleBackColor = false;
@@ -107,21 +106,70 @@
             this.cancel.FlatAppearance.BorderSize = 0;
             this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cancel.Location = new System.Drawing.Point(170, 245);
-            this.cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cancel.Location = new System.Drawing.Point(137, 159);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(112, 35);
+            this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 5;
             this.cancel.Text = "Cancelar";
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
+            // checkBoxAdm
+            // 
+            this.checkBoxAdm.AutoSize = true;
+            this.checkBoxAdm.Location = new System.Drawing.Point(12, 131);
+            this.checkBoxAdm.Name = "checkBoxAdm";
+            this.checkBoxAdm.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxAdm.TabIndex = 6;
+            this.checkBoxAdm.Text = "checkBox1";
+            this.checkBoxAdm.UseVisualStyleBackColor = true;
+            this.checkBoxAdm.CheckedChanged += new System.EventHandler(this.checkBoxAdm_CheckedChanged);
+            // 
+            // checkBoxUser
+            // 
+            this.checkBoxUser.AutoSize = true;
+            this.checkBoxUser.Location = new System.Drawing.Point(137, 131);
+            this.checkBoxUser.Name = "checkBoxUser";
+            this.checkBoxUser.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxUser.TabIndex = 7;
+            this.checkBoxUser.Text = "checkBox2";
+            this.checkBoxUser.UseVisualStyleBackColor = true;
+            this.checkBoxUser.CheckedChanged += new System.EventHandler(this.checkBoxUser_CheckedChanged);
+            // 
+            // textBoxAdm
+            // 
+            this.textBoxAdm.BackColor = System.Drawing.Color.LightGray;
+            this.textBoxAdm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAdm.Location = new System.Drawing.Point(27, 130);
+            this.textBoxAdm.Name = "textBoxAdm";
+            this.textBoxAdm.Size = new System.Drawing.Size(94, 16);
+            this.textBoxAdm.TabIndex = 8;
+            this.textBoxAdm.Text = "Administrador";
+            this.textBoxAdm.TextChanged += new System.EventHandler(this.textBoxAdm_TextChanged);
+            // 
+            // textBoxUser
+            // 
+            this.textBoxUser.BackColor = System.Drawing.Color.LightGray;
+            this.textBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUser.Location = new System.Drawing.Point(155, 131);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(62, 16);
+            this.textBoxUser.TabIndex = 9;
+            this.textBoxUser.Text = "Usuário";
+            this.textBoxUser.TextChanged += new System.EventHandler(this.textBoxUser_TextChanged);
+            // 
             // Cadastro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(336, 298);
+            this.ClientSize = new System.Drawing.Size(224, 194);
+            this.Controls.Add(this.textBoxUser);
+            this.Controls.Add(this.textBoxAdm);
+            this.Controls.Add(this.checkBoxUser);
+            this.Controls.Add(this.checkBoxAdm);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.accept);
             this.Controls.Add(this.textBox3);
@@ -130,10 +178,9 @@
             this.Controls.Add(this.BoxCadastro);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(352, 337);
-            this.MinimumSize = new System.Drawing.Size(352, 337);
+            this.MaximumSize = new System.Drawing.Size(240, 233);
+            this.MinimumSize = new System.Drawing.Size(240, 233);
             this.Name = "Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
@@ -151,5 +198,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button accept;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.CheckBox checkBoxAdm;
+        private System.Windows.Forms.CheckBox checkBoxUser;
+        private System.Windows.Forms.TextBox textBoxAdm;
+        private System.Windows.Forms.TextBox textBoxUser;
     }
 }

@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracaoAttrMQTT));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.textNovoTopico = new System.Windows.Forms.TextBox();
             this.btnMudar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textTopico = new System.Windows.Forms.TextBox();
             this.novoTopico = new System.Windows.Forms.TextBox();
             this.textoTopicoAtual = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,6 +45,7 @@
             this.aplicarInfoPos = new System.Windows.Forms.Button();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.painelInfoVel.SuspendLayout();
             this.painelInfoPos.SuspendLayout();
@@ -52,9 +54,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.btnApagar);
+            this.panel1.Controls.Add(this.textNovoTopico);
             this.panel1.Controls.Add(this.btnMudar);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textTopico);
             this.panel1.Controls.Add(this.novoTopico);
             this.panel1.Controls.Add(this.textoTopicoAtual);
             this.panel1.Controls.Add(this.comboBox1);
@@ -67,24 +70,37 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox4
+            // btnApagar
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(309, 60);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 16);
-            this.textBox4.TabIndex = 39;
-            this.textBox4.Text = "Novo tópico";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnApagar.BackColor = System.Drawing.Color.Yellow;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.Location = new System.Drawing.Point(258, 109);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(103, 23);
+            this.btnApagar.TabIndex = 40;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // textNovoTopico
+            // 
+            this.textNovoTopico.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textNovoTopico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNovoTopico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNovoTopico.Location = new System.Drawing.Point(309, 60);
+            this.textNovoTopico.Name = "textNovoTopico";
+            this.textNovoTopico.Size = new System.Drawing.Size(100, 16);
+            this.textNovoTopico.TabIndex = 39;
+            this.textNovoTopico.Text = "Novo tópico";
+            this.textNovoTopico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnMudar
             // 
             this.btnMudar.BackColor = System.Drawing.Color.Lime;
             this.btnMudar.FlatAppearance.BorderSize = 0;
             this.btnMudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMudar.Location = new System.Drawing.Point(177, 109);
+            this.btnMudar.Location = new System.Drawing.Point(100, 109);
             this.btnMudar.Name = "btnMudar";
             this.btnMudar.Size = new System.Drawing.Size(103, 23);
             this.btnMudar.TabIndex = 38;
@@ -92,17 +108,18 @@
             this.btnMudar.UseVisualStyleBackColor = false;
             this.btnMudar.Click += new System.EventHandler(this.btnMudar_Click);
             // 
-            // textBox3
+            // textTopico
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(46, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 16);
-            this.textBox3.TabIndex = 37;
-            this.textBox3.Text = "Tópico atual";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textTopico.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textTopico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTopico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTopico.Location = new System.Drawing.Point(46, 60);
+            this.textTopico.Name = "textTopico";
+            this.textTopico.Size = new System.Drawing.Size(100, 16);
+            this.textTopico.TabIndex = 37;
+            this.textTopico.Text = "Tópico atual";
+            this.textTopico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textTopico.TextChanged += new System.EventHandler(this.textTopico_TextChanged);
             // 
             // novoTopico
             // 
@@ -226,12 +243,23 @@
             // 
             this.btnExit.BackgroundImage = global::InterfaceCupula.Properties.Resources.Webp3;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.Location = new System.Drawing.Point(12, 180);
+            this.btnExit.Location = new System.Drawing.Point(94, 182);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(64, 53);
             this.btnExit.TabIndex = 5;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackgroundImage = global::InterfaceCupula.Properties.Resources.Webp4;
+            this.btnRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegister.Location = new System.Drawing.Point(12, 182);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(64, 53);
+            this.btnRegister.TabIndex = 7;
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // ConfiguracaoAttrMQTT
             // 
@@ -239,12 +267,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(485, 235);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ConfiguracaoAttrMQTT";
-            this.Text = "ConfiguracaoAttrMQTT";
+            this.Text = "Configurar atributos MQTT";
             this.Load += new System.EventHandler(this.ConfiguracaoAttrMQTT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -267,10 +296,12 @@
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textNovoTopico;
         private System.Windows.Forms.Button btnMudar;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textTopico;
         private System.Windows.Forms.TextBox novoTopico;
         private System.Windows.Forms.TextBox textoTopicoAtual;
+        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
