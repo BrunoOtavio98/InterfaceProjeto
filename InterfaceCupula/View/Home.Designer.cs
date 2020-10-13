@@ -344,7 +344,7 @@
             this.Go.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Go.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Go.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Go.Location = new System.Drawing.Point(321, 94);
+            this.Go.Location = new System.Drawing.Point(318, 91);
             this.Go.Name = "Go";
             this.Go.Size = new System.Drawing.Size(53, 23);
             this.Go.TabIndex = 8;

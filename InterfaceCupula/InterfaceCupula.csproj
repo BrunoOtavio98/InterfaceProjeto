@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="Controller\DatabaseManipulation.cs" />
     <Compile Include="Controller\MQTTConnection.cs" />
+    <Compile Include="Enums\TiposDeUsuarios.cs" />
     <Compile Include="Models\Inversor.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="View\Cadastro.cs">
@@ -110,6 +111,12 @@
     </Compile>
     <Compile Include="View\Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfiguracaoAttrMQTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConfiguracaoAttrMQTT.Designer.cs">
+      <DependentUpon>ConfiguracaoAttrMQTT.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -127,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="View\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfiguracaoAttrMQTT.resx">
+      <DependentUpon>ConfiguracaoAttrMQTT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

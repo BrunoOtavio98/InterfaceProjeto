@@ -26,3 +26,4 @@ C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\In
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.csproj.CopyComplete
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.View.Cadastro.resources
 C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\bin\Debug\MQTTnet.dll
+C:\Users\Bruno Otávio\source\repos\InterfaceCupula\InterfaceCupula\obj\Debug\InterfaceCupula.View.ConfiguracaoAttrMQTT.resources

@@ -35,7 +35,25 @@ namespace InterfaceCupula.View
         MQTTConnection mqttConnectioninfoSincTelescopio;
         MQTTConnection mqttConnectioninfoPosTelescopio;
         MQTTConnection mqttConnectioninfoVelDomo;
-      
+
+        public string strCfgShutter { get; set; }
+        public string strCfgAH { get; set; }
+        public string strCfgH { get; set; }
+        public string strCfgAzm { get; set; }
+        public string strCfgSinc { get; set; }
+        public string strCfgCmdExterno { get; set; }
+        public string strCfgInfoTpr { get; set; }
+        public string strCfgInfoAzm { get; set; }
+        public string strCfgInfoHome { get; set; }
+        public string strCfgInfoPark { get; set; }
+        public string strCfgInfoResol { get; set; }
+        public string strCfgInfoSinc { get; set; }
+        public string strCfgInfoPos { get; set; }
+        public string strCfgInfoVelDomo { get; set; }
+
+        public string brokerConfig { get; set; }
+
+        public int mqttPort { get; set; }
 
         public Home()
         {
@@ -56,24 +74,41 @@ namespace InterfaceCupula.View
             mqttConnectioninfoPosTelescopio       = new MQTTConnection();
             mqttConnectioninfoVelDomo             = new MQTTConnection();
 
-
             textBox3.Text = Program.getUserLogged().Nome;
 
-            mqttConnectionShutter.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnTrapeira");
-            mqttConnectionAH.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnAHorario");
-            mqttConnectionH.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnHorario");
-            mqttConnectionAzm.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.azmDestino");
-            mqttConnectionSinc.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.btnSincTelescopio");
+            mqttPort = 1883;
+            brokerConfig = "broker.hivemq.com";
 
-            mqttConnectionCmdExterno.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.cmdExterno");
-            mqttConnectioninfoTrapeira.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoTrapeira");
-            mqttConnectioninfoAzmDomo.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoAzmDomo");
-            mqttConnectioninfoPosHome.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoPosHome");
-            mqttConnectioninfoPosPark.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoPosPark");
-            mqttConnectioninfoResolucao.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoResolucao");
-            mqttConnectioninfoSincTelescopio.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoSincTelescopio");
-            mqttConnectioninfoPosTelescopio.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoPosTelescopio");
-            mqttConnectioninfoVelDomo.StartConnection("broker.hivemq.com", 1883, "jupter.controle.cupula.OAUEPG.infoVelDomo");
+            strCfgShutter = "jupter.controle.cupula.OAUEPG.btnTrapeira";
+            strCfgAH = "jupter.controle.cupula.OAUEPG.btnAHorario";
+            strCfgH = "jupter.controle.cupula.OAUEPG.btnHorario";
+            strCfgAzm = "jupter.controle.cupula.OAUEPG.azmDestino";
+            strCfgSinc = "jupter.controle.cupula.OAUEPG.btnSincTelescopio";
+            strCfgCmdExterno = "jupter.controle.cupula.OAUEPG.cmdExterno";
+            strCfgInfoTpr = "jupter.controle.cupula.OAUEPG.infoTrapeira";
+            strCfgInfoAzm = "jupter.controle.cupula.OAUEPG.infoAzmDomo";
+            strCfgInfoHome = "jupter.controle.cupula.OAUEPG.infoPosHome";
+            strCfgInfoPark = "jupter.controle.cupula.OAUEPG.infoPosPark";
+            strCfgInfoResol = "jupter.controle.cupula.OAUEPG.infoResolucao";
+            strCfgInfoSinc = "jupter.controle.cupula.OAUEPG.infoSincTelescopio";
+            strCfgInfoPos = "jupter.controle.cupula.OAUEPG.infoPosTelescopio";
+            strCfgInfoVelDomo = "jupter.controle.cupula.OAUEPG.infoVelDomo";
+
+            mqttConnectionShutter.StartConnection(brokerConfig, mqttPort, strCfgShutter);
+            mqttConnectionAH.StartConnection(brokerConfig, mqttPort, strCfgAH);
+            mqttConnectionH.StartConnection(brokerConfig, mqttPort, strCfgH);
+            mqttConnectionAzm.StartConnection(brokerConfig, mqttPort, strCfgAzm);
+            mqttConnectionSinc.StartConnection(brokerConfig, mqttPort, strCfgSinc);
+
+            mqttConnectionCmdExterno.StartConnection(brokerConfig, mqttPort, strCfgCmdExterno);
+            mqttConnectioninfoTrapeira.StartConnection(brokerConfig, mqttPort, strCfgInfoTpr);
+            mqttConnectioninfoAzmDomo.StartConnection(brokerConfig, mqttPort, strCfgInfoAzm);
+            mqttConnectioninfoPosHome.StartConnection(brokerConfig, mqttPort, strCfgInfoHome);
+            mqttConnectioninfoPosPark.StartConnection(brokerConfig, mqttPort, strCfgInfoPark);
+            mqttConnectioninfoResolucao.StartConnection(brokerConfig, mqttPort, strCfgInfoResol);
+            mqttConnectioninfoSincTelescopio.StartConnection(brokerConfig, mqttPort, strCfgInfoSinc);
+            mqttConnectioninfoPosTelescopio.StartConnection(brokerConfig, mqttPort, strCfgInfoPos);
+            mqttConnectioninfoVelDomo.StartConnection(brokerConfig, mqttPort, strCfgInfoVelDomo);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -135,29 +170,15 @@ namespace InterfaceCupula.View
 
                 throw;
             }
-
-
         }
 
     
         private void timer1_Tick(object sender, EventArgs e)
         {
-            /*
-            if (mqttConnecionShutter.getMessageFlag() != lastMsgReceivedFlag)
-            {
-                mqttenabled = false;
-                lastMsgReceivedFlag = mqttConnecionShutter.getMessageFlag();
-              //  textoPainel.Text = mqttConnecion.getMsg();
-            }
-            else
-            {
-                mqttenabled = true;
-            }*/
             try
             {
                 if (mqttConnectionCmdExterno.getMsg().Equals("1"))
                 {
-
                     if (mqttConnectioninfoSincTelescopio.getMsg().Equals("0"))
                     {
                         comandosMQTT.Checked = true;
@@ -167,7 +188,6 @@ namespace InterfaceCupula.View
                         btnFw.Enabled = true;
                         Go.Enabled = true;
                         azimuteChange.Enabled = true;
-
                     }
                 }
                 else
@@ -187,7 +207,6 @@ namespace InterfaceCupula.View
                     {
                         sincronizarTel.Checked = false;
                     }
-
                 }
 
                 if (mqttConnectioninfoTrapeira.getMsg().Equals("1"))
@@ -202,8 +221,7 @@ namespace InterfaceCupula.View
                 {
                     msgShutter.Text = "Fechada";
                 }
-
-                
+                                
                 msgAzimute.Text = mqttConnectioninfoAzmDomo.getMsg() + ".0";
                 msgPosHome.Text = convertBooleanToString(mqttConnectioninfoPosHome.getMsg());
                 msgPark.Text = convertBooleanToString(mqttConnectioninfoPosPark.getMsg());
@@ -213,7 +231,6 @@ namespace InterfaceCupula.View
             {
 
             }
-
         }
 
         private void textBoxTrapeira_TextChanged(object sender, EventArgs e)
@@ -231,8 +248,8 @@ namespace InterfaceCupula.View
         private void btnRev_Click(object sender, EventArgs e)
         {
             mqttConnectionAH.PublishAsync("1");
-
         }
+
         private void btnFwr_Click(object sender, EventArgs e)
         {
             mqttConnectionH.PublishAsync("1");

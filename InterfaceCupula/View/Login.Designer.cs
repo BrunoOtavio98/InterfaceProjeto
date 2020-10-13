@@ -68,7 +68,7 @@
             // 
             this.BoxNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BoxNome.Location = new System.Drawing.Point(61, 228);
+            this.BoxNome.Location = new System.Drawing.Point(61, 218);
             this.BoxNome.Name = "BoxNome";
             this.BoxNome.Size = new System.Drawing.Size(228, 20);
             this.BoxNome.TabIndex = 2;
@@ -98,19 +98,23 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(59, 209);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(61, 196);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 13);
+            this.textBox1.Size = new System.Drawing.Size(100, 16);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Nome";
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(61, 254);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(61, 247);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 13);
+            this.textBox2.Size = new System.Drawing.Size(100, 16);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "Senha";
             // 

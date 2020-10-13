@@ -38,7 +38,7 @@ namespace InterfaceCupula
 
         public static void setUserLogged(Usuario user)
         {
-            userLogged = new Usuario(user.userId, user.Nome, user.Senha);
+            userLogged = new Usuario(user.userId, user.Nome, user.Senha, user.TipoUsuario);
         }     
 
      

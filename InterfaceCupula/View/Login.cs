@@ -11,6 +11,7 @@ using InterfaceCupula.Controller;
 using InterfaceCupula.Models;
 using InterfaceCupula.View;
 using System.Security.Cryptography;
+using InterfaceCupula.Enums;
 
 namespace InterfaceCupula
 {
@@ -20,7 +21,7 @@ namespace InterfaceCupula
         bool controlaClickSenha = true;
         bool logginState = false;
         Home telaHome;
-
+        ConfiguracaoAttrMQTT cfgMqtt;
 
         public Form1()
         {
@@ -38,12 +39,10 @@ namespace InterfaceCupula
 
             if (BoxSenha.Text.Equals("Senha") || BoxNome.Text.Length.Equals("Nome do usuário") || BoxNome.Text.Length == 0 || BoxSenha.Text.Length == 0)
             {
-
                 AtualizarEstadoMsgBox();
             }
             else
-            {
-
+            { 
                 dataUsers = DatabaseManipulation.DBUsers();
 
                 MD5 md5 = MD5.Create();
@@ -64,14 +63,26 @@ namespace InterfaceCupula
 
                         //Vai para a outra tela
                         Program.setUserLogged(user);
-                        telaHome = new Home();
-
                         this.Hide();
-                        telaHome.ShowDialog();
+
+                        if (user.TipoUsuario == TiposDeUsuarios.Usuario)
+                        {
+                            telaHome = new Home();
+
+                           
+                            telaHome.ShowDialog();
+                        }
+
+                        else
+                        {
+                            cfgMqtt = new ConfiguracaoAttrMQTT();
+                            cfgMqtt.ShowDialog();
+                            
+                        }
+
                         logginState = true;
                         this.Close();
                     } 
-
                 }
                 if (!logginState)
                 {
@@ -87,9 +98,6 @@ namespace InterfaceCupula
             AtualizarEstadoMsgBox();
 
         }
-
-        
-    
   
         private void BoxNome_TextChanged(object sender, EventArgs e)
         {
