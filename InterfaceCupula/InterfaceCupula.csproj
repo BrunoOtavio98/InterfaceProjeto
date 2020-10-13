@@ -104,6 +104,7 @@
     <Compile Include="Controller\DatabaseManipulation.cs" />
     <Compile Include="Controller\MQTTConnection.cs" />
     <Compile Include="Enums\TiposDeUsuarios.cs" />
+    <Compile Include="Models\ConfigMqtt.cs" />
     <Compile Include="Models\Inversor.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="View\Cadastro.cs">

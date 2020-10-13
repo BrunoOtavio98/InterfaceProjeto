@@ -85,5 +85,68 @@ namespace InterfaceCupula.Controller
 
             return false;
         }
+
+        public static List<ConfigMqtt> DBConfigMqtt()
+        {
+            List<ConfigMqtt> toReturn = new List<ConfigMqtt>();
+
+            string connStr = "server=localhost;user=root;database=domo;port=3306;password=subruno98";
+            MySqlConnection myConection = new MySqlConnection(connStr);
+           
+            try
+            {
+                Console.WriteLine("Connectando ao banco");
+                myConection.Open();
+
+                string query = "SELECT * FROM config_mqtt";
+                MySqlCommand newCmd = new MySqlCommand(query, myConection);
+
+                MySqlDataReader rdr = newCmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Console.WriteLine(rdr[0] + "-- " + rdr[1]);
+                    toReturn.Add(new ConfigMqtt(int.Parse(rdr[0].ToString()), rdr[1].ToString()));
+                }
+                 rdr.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            myConection.Close();
+            return toReturn;
+        }
+
+        public static void changeConfigMqtt(int id, string newVal)
+        {
+
+            string connStr = "server=localhost;user=root;database=domo;port=3306;password=subruno98";
+            MySqlConnection myConection = new MySqlConnection(connStr);
+            string query;
+            MySqlCommand newCmd;
+
+            try
+            {
+                myConection.Open();
+                
+        
+                query = "update config_mqtt" +
+                        " set valor = '" + newVal + " ' " +
+                        "where idconfig_mqtt = " + id;
+
+                newCmd = new MySqlCommand(query, myConection);
+                newCmd.Prepare();
+                newCmd.ExecuteNonQuery();
+
+                myConection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+
     }
 }

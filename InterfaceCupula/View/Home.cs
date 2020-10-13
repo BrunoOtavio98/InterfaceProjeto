@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InterfaceCupula;
 using InterfaceCupula.Controller;
+using InterfaceCupula.Models;
 
 namespace InterfaceCupula.View
 {
@@ -58,6 +59,7 @@ namespace InterfaceCupula.View
         public Home()
         {
             InitializeComponent();
+            List<ConfigMqtt> itens = DatabaseManipulation.DBConfigMqtt();
 
             mqttConnectionShutter                 = new MQTTConnection();
             mqttConnectionAH                      = new MQTTConnection();
@@ -76,23 +78,23 @@ namespace InterfaceCupula.View
 
             textBox3.Text = Program.getUserLogged().Nome;
 
-            mqttPort = 1883;
-            brokerConfig = "broker.hivemq.com";
-
-            strCfgShutter = "jupter.controle.cupula.OAUEPG.btnTrapeira";
-            strCfgAH = "jupter.controle.cupula.OAUEPG.btnAHorario";
-            strCfgH = "jupter.controle.cupula.OAUEPG.btnHorario";
-            strCfgAzm = "jupter.controle.cupula.OAUEPG.azmDestino";
-            strCfgSinc = "jupter.controle.cupula.OAUEPG.btnSincTelescopio";
-            strCfgCmdExterno = "jupter.controle.cupula.OAUEPG.cmdExterno";
-            strCfgInfoTpr = "jupter.controle.cupula.OAUEPG.infoTrapeira";
-            strCfgInfoAzm = "jupter.controle.cupula.OAUEPG.infoAzmDomo";
-            strCfgInfoHome = "jupter.controle.cupula.OAUEPG.infoPosHome";
-            strCfgInfoPark = "jupter.controle.cupula.OAUEPG.infoPosPark";
-            strCfgInfoResol = "jupter.controle.cupula.OAUEPG.infoResolucao";
-            strCfgInfoSinc = "jupter.controle.cupula.OAUEPG.infoSincTelescopio";
-            strCfgInfoPos = "jupter.controle.cupula.OAUEPG.infoPosTelescopio";
-            strCfgInfoVelDomo = "jupter.controle.cupula.OAUEPG.infoVelDomo";
+            brokerConfig = itens[0].valor;
+            mqttPort = int.Parse(itens[1].valor);
+           
+            strCfgShutter = itens[2].valor;
+            strCfgAH = itens[3].valor;
+            strCfgH = itens[4].valor;
+            strCfgAzm = itens[5].valor;
+            strCfgSinc = itens[6].valor;
+            strCfgCmdExterno = itens[7].valor;
+            strCfgInfoTpr = itens[8].valor;
+            strCfgInfoAzm = itens[9].valor;
+            strCfgInfoHome = itens[10].valor;
+            strCfgInfoPark = itens[11].valor;
+            strCfgInfoResol = itens[12].valor;
+            strCfgInfoSinc = itens[13].valor;
+            strCfgInfoPos = itens[14].valor;
+            strCfgInfoVelDomo = itens[15].valor;
 
             mqttConnectionShutter.StartConnection(brokerConfig, mqttPort, strCfgShutter);
             mqttConnectionAH.StartConnection(brokerConfig, mqttPort, strCfgAH);

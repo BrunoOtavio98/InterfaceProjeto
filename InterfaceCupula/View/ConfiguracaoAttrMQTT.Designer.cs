@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracaoAttrMQTT));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnMudar = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.novoTopico = new System.Windows.Forms.TextBox();
+            this.textoTopicoAtual = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.painelInfoVel = new System.Windows.Forms.Panel();
             this.aplicarInfoVel = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -37,12 +44,6 @@
             this.aplicarInfoPos = new System.Windows.Forms.Button();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.painelInfoVel.SuspendLayout();
             this.painelInfoPos.SuspendLayout();
@@ -52,19 +53,105 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnMudar);
             this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.novoTopico);
+            this.panel1.Controls.Add(this.textoTopicoAtual);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.painelInfoVel);
             this.panel1.Controls.Add(this.cfgInfoVelocidade);
             this.panel1.Controls.Add(this.painelInfoPos);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 135);
+            this.panel1.Size = new System.Drawing.Size(461, 135);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(309, 60);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 16);
+            this.textBox4.TabIndex = 39;
+            this.textBox4.Text = "Novo tópico";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnMudar
+            // 
+            this.btnMudar.BackColor = System.Drawing.Color.Lime;
+            this.btnMudar.FlatAppearance.BorderSize = 0;
+            this.btnMudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMudar.Location = new System.Drawing.Point(177, 109);
+            this.btnMudar.Name = "btnMudar";
+            this.btnMudar.Size = new System.Drawing.Size(103, 23);
+            this.btnMudar.TabIndex = 38;
+            this.btnMudar.Text = "Aplicar mudança";
+            this.btnMudar.UseVisualStyleBackColor = false;
+            this.btnMudar.Click += new System.EventHandler(this.btnMudar_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(46, 60);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 16);
+            this.textBox3.TabIndex = 37;
+            this.textBox3.Text = "Tópico atual";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // novoTopico
+            // 
+            this.novoTopico.BackColor = System.Drawing.Color.LightGray;
+            this.novoTopico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.novoTopico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.novoTopico.Location = new System.Drawing.Point(258, 82);
+            this.novoTopico.Name = "novoTopico";
+            this.novoTopico.Size = new System.Drawing.Size(200, 16);
+            this.novoTopico.TabIndex = 36;
+            this.novoTopico.TextChanged += new System.EventHandler(this.novoTopico_TextChanged);
+            // 
+            // textoTopicoAtual
+            // 
+            this.textoTopicoAtual.BackColor = System.Drawing.Color.LightGray;
+            this.textoTopicoAtual.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textoTopicoAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoTopicoAtual.Location = new System.Drawing.Point(3, 82);
+            this.textoTopicoAtual.Name = "textoTopicoAtual";
+            this.textoTopicoAtual.ReadOnly = true;
+            this.textoTopicoAtual.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textoTopicoAtual.Size = new System.Drawing.Size(200, 16);
+            this.textoTopicoAtual.TabIndex = 35;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Configurar Broker",
+            "Configurar Porta",
+            "Configurar Tópico: Acionamento Trapeira",
+            "Configurar Tópico: Movimentação Anti-Horária",
+            "Configurar Tópico: Movimentação Horária",
+            "Configurar Tópico: Azimute",
+            "Configurar Tópico: Sincronização ",
+            "Configurar Tópico: Comandos Remoto",
+            "Configurar Tópico: Informação Trapeira",
+            "Configurar Tópico: Informação Azimute",
+            "Configurar Tópico: Informação Home",
+            "Configurar Tópico: Informação Park",
+            "Configurar Tópico: Informação Resolução",
+            "Configurar Tópico: Informação Sincronia",
+            "Configurar Tópico: Informação Posição",
+            "Configurar Tópico: Informação Velocidade"});
+            this.comboBox1.Location = new System.Drawing.Point(111, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(247, 21);
+            this.comboBox1.TabIndex = 34;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // painelInfoVel
             // 
@@ -146,78 +233,15 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Configurar Broker",
-            "Configurar Porta",
-            "Configurar Tópico: Acionamento Trapeira",
-            "Configurar Tópico: Movimentação Horária",
-            "Configurar Tópico: Movimentação Anti-Horária",
-            "Configurar Tópico: Azimute",
-            "Configurar Tópico: Sincronização ",
-            "Configurar Tópico: Comandos Remoto",
-            "Configurar Tópico: Informação Trapeira",
-            "Configurar Tópico: Informação Azimute",
-            "Configurar Tópico: Informação Home",
-            "Configurar Tópico: Informação Park",
-            "Configurar Tópico: Informação Resolução",
-            "Configurar Tópico: Informação Sincronia",
-            "Configurar Tópico: Informação Posição",
-            "Configurar Tópico: Informação Velocidade"});
-            this.comboBox1.Location = new System.Drawing.Point(76, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 21);
-            this.comboBox1.TabIndex = 34;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(3, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 35;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(268, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(112, 20);
-            this.textBox2.TabIndex = 36;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(9, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 37;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(149, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(280, 56);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 39;
-            // 
             // ConfiguracaoAttrMQTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(407, 235);
+            this.ClientSize = new System.Drawing.Size(485, 235);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ConfiguracaoAttrMQTT";
             this.Text = "ConfiguracaoAttrMQTT";
@@ -244,9 +268,9 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMudar;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox novoTopico;
+        private System.Windows.Forms.TextBox textoTopicoAtual;
     }
 }
