@@ -6,7 +6,8 @@ using System.Windows.Forms;
 using InterfaceCupula.Controller;
 using InterfaceCupula.View;
 using InterfaceCupula.Models;
-
+using System.Threading;
+using System.Configuration;
 namespace InterfaceCupula
 {
     static class Program
@@ -20,8 +21,13 @@ namespace InterfaceCupula
         public static Inversor inversorObj = new Inversor(true,true,true,0.0f);
 
         static void Main()
-        {   
-            
+        {
+
+            var language = ConfigurationManager.AppSettings["language"];
+
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
 

@@ -76,7 +76,7 @@ namespace InterfaceCupula.View
             mqttConnectioninfoPosTelescopio       = new MQTTConnection();
             mqttConnectioninfoVelDomo             = new MQTTConnection();
 
-            textBox3.Text = Program.getUserLogged().Nome;
+           
 
             brokerConfig = itens[0].valor;
             mqttPort = int.Parse(itens[1].valor);
@@ -334,6 +334,24 @@ namespace InterfaceCupula.View
             {
                 antigo_valor = int.Parse(azimuteChange.Value.ToString());
 
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var changeLanguage = new ConfiLinguagem();
+
+            if (comboBox2.SelectedIndex == 0)
+            {
+                comboBox2.Text = "Português - PT";
+                changeLanguage.UpdateConfig("language", "en");
+                Application.Restart();
+            }
+            else
+            {
+                comboBox2.Text = "English - EN";
+                changeLanguage.UpdateConfig("language", "en-US");
+                Application.Restart();
             }
         }
     }

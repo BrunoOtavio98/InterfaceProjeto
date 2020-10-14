@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
@@ -101,6 +102,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ConfiLinguagem.cs" />
     <Compile Include="Controller\DatabaseManipulation.cs" />
     <Compile Include="Controller\MQTTConnection.cs" />
     <Compile Include="Enums\TiposDeUsuarios.cs" />
@@ -133,11 +135,35 @@
     <Compile Include="View\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Cadastro.aa.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro.en-SI.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro.en-US.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfiguracaoAttrMQTT.en-SI.resx">
+      <DependentUpon>ConfiguracaoAttrMQTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfiguracaoAttrMQTT.en-US.resx">
+      <DependentUpon>ConfiguracaoAttrMQTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ConfiguracaoAttrMQTT.resx">
       <DependentUpon>ConfiguracaoAttrMQTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Home.en-US.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.aa-ER.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.en-US.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -207,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Webp.net-resizeimage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brazil-flag-icon-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />

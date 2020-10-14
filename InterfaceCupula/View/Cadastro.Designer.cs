@@ -39,64 +39,49 @@
             this.checkBoxUser = new System.Windows.Forms.CheckBox();
             this.textBoxAdm = new System.Windows.Forms.TextBox();
             this.textBoxUser = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BoxCadastro
             // 
-            this.BoxCadastro.BackColor = System.Drawing.Color.LightGray;
+            this.BoxCadastro.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BoxCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BoxCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.BoxCadastro, "BoxCadastro");
             this.BoxCadastro.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.BoxCadastro.Location = new System.Drawing.Point(12, 12);
             this.BoxCadastro.Name = "BoxCadastro";
             this.BoxCadastro.ReadOnly = true;
-            this.BoxCadastro.Size = new System.Drawing.Size(100, 13);
-            this.BoxCadastro.TabIndex = 0;
-            this.BoxCadastro.Text = "Nome do usuário";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 31);
-            this.textBox1.MaxLength = 50;
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 20);
-            this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightGray;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox2.Location = new System.Drawing.Point(12, 75);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 13);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Senha";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 94);
-            this.textBox3.MaxLength = 50;
+            resources.ApplyResources(this.textBox3, "textBox3");
             this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(109, 20);
-            this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // accept
             // 
             this.accept.BackColor = System.Drawing.Color.LimeGreen;
             this.accept.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.accept, "accept");
             this.accept.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.accept.Location = new System.Drawing.Point(12, 159);
             this.accept.Name = "accept";
-            this.accept.Size = new System.Drawing.Size(88, 23);
-            this.accept.TabIndex = 4;
-            this.accept.Text = "Cadastrar";
             this.accept.UseVisualStyleBackColor = false;
             this.accept.Click += new System.EventHandler(this.accept_Click);
             // 
@@ -104,87 +89,92 @@
             // 
             this.cancel.BackColor = System.Drawing.Color.Crimson;
             this.cancel.FlatAppearance.BorderSize = 0;
-            this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.cancel, "cancel");
             this.cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cancel.Location = new System.Drawing.Point(137, 159);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(75, 23);
-            this.cancel.TabIndex = 5;
-            this.cancel.Text = "Cancelar";
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // checkBoxAdm
             // 
-            this.checkBoxAdm.AutoSize = true;
-            this.checkBoxAdm.Location = new System.Drawing.Point(12, 131);
+            resources.ApplyResources(this.checkBoxAdm, "checkBoxAdm");
             this.checkBoxAdm.Name = "checkBoxAdm";
-            this.checkBoxAdm.Size = new System.Drawing.Size(80, 17);
-            this.checkBoxAdm.TabIndex = 6;
-            this.checkBoxAdm.Text = "checkBox1";
             this.checkBoxAdm.UseVisualStyleBackColor = true;
             this.checkBoxAdm.CheckedChanged += new System.EventHandler(this.checkBoxAdm_CheckedChanged);
             // 
             // checkBoxUser
             // 
-            this.checkBoxUser.AutoSize = true;
-            this.checkBoxUser.Location = new System.Drawing.Point(137, 131);
+            resources.ApplyResources(this.checkBoxUser, "checkBoxUser");
             this.checkBoxUser.Name = "checkBoxUser";
-            this.checkBoxUser.Size = new System.Drawing.Size(80, 17);
-            this.checkBoxUser.TabIndex = 7;
-            this.checkBoxUser.Text = "checkBox2";
             this.checkBoxUser.UseVisualStyleBackColor = true;
             this.checkBoxUser.CheckedChanged += new System.EventHandler(this.checkBoxUser_CheckedChanged);
             // 
             // textBoxAdm
             // 
-            this.textBoxAdm.BackColor = System.Drawing.Color.LightGray;
+            this.textBoxAdm.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxAdm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAdm.Location = new System.Drawing.Point(27, 130);
+            resources.ApplyResources(this.textBoxAdm, "textBoxAdm");
             this.textBoxAdm.Name = "textBoxAdm";
-            this.textBoxAdm.Size = new System.Drawing.Size(94, 16);
-            this.textBoxAdm.TabIndex = 8;
-            this.textBoxAdm.Text = "Administrador";
             this.textBoxAdm.TextChanged += new System.EventHandler(this.textBoxAdm_TextChanged);
             // 
             // textBoxUser
             // 
-            this.textBoxUser.BackColor = System.Drawing.Color.LightGray;
+            this.textBoxUser.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUser.Location = new System.Drawing.Point(155, 131);
+            resources.ApplyResources(this.textBoxUser, "textBoxUser");
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(62, 16);
-            this.textBoxUser.TabIndex = 9;
-            this.textBoxUser.Text = "Usuário";
             this.textBoxUser.TextChanged += new System.EventHandler(this.textBoxUser_TextChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.LightGray;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox4, "textBox4");
+            this.textBox4.Name = "textBox4";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.LightGray;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            resources.GetString("comboBox2.Items"),
+            resources.GetString("comboBox2.Items1")});
+            resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.BoxCadastro);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBoxUser);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBoxAdm);
+            this.panel1.Controls.Add(this.accept);
+            this.panel1.Controls.Add(this.checkBoxUser);
+            this.panel1.Controls.Add(this.cancel);
+            this.panel1.Controls.Add(this.checkBoxAdm);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
             // 
             // Cadastro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(224, 194);
-            this.Controls.Add(this.textBoxUser);
-            this.Controls.Add(this.textBoxAdm);
-            this.Controls.Add(this.checkBoxUser);
-            this.Controls.Add(this.checkBoxAdm);
-            this.Controls.Add(this.cancel);
-            this.Controls.Add(this.accept);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.BoxCadastro);
-            this.ForeColor = System.Drawing.Color.LightGray;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.comboBox2);
+            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(240, 233);
-            this.MinimumSize = new System.Drawing.Size(240, 233);
             this.Name = "Cadastro";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.Cadastro_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +192,8 @@
         private System.Windows.Forms.CheckBox checkBoxUser;
         private System.Windows.Forms.TextBox textBoxAdm;
         private System.Windows.Forms.TextBox textBoxUser;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -247,5 +247,33 @@ namespace InterfaceCupula.View
         {
 
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var changeLanguage = new ConfiLinguagem();
+
+            if (comboBox2.SelectedIndex == 0)
+            {
+                comboBox2.Text = "Português - PT";
+                changeLanguage.UpdateConfig("language", "en");
+                Application.Restart();
+            }
+            else
+            {
+                comboBox2.Text = "English - EN";
+                changeLanguage.UpdateConfig("language", "en-US");
+                Application.Restart();
+            }
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

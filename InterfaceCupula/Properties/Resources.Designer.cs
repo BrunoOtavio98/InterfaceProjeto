@@ -63,6 +63,16 @@ namespace InterfaceCupula.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brazil_flag_icon_32 {
+            get {
+                object obj = ResourceManager.GetObject("brazil-flag-icon-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OBSERVATÓRIO {
             get {
                 object obj = ResourceManager.GetObject("OBSERVATÓRIO", resourceCulture);
@@ -187,6 +197,16 @@ namespace InterfaceCupula.Properties {
         internal static System.Drawing.Bitmap Webp4 {
             get {
                 object obj = ResourceManager.GetObject("Webp4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Webp5 {
+            get {
+                object obj = ResourceManager.GetObject("Webp5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
