@@ -31,6 +31,7 @@ namespace InterfaceCupula.View
         /// </summary>
         private void InitializeComponent()
         {
+
             var language = ConfigurationManager.AppSettings["language"];
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
@@ -152,6 +153,7 @@ namespace InterfaceCupula.View
             this.msgShutter.ForeColor = System.Drawing.Color.Black;
             this.msgShutter.Name = "msgShutter";
             this.msgShutter.ReadOnly = true;
+            this.msgShutter.TextChanged += new System.EventHandler(this.msgShutter_TextChanged);
             // 
             // textBoxTrapeira
             // 

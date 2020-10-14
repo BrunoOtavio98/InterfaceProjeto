@@ -125,7 +125,9 @@
     <value>Delete</value>
   </data>
   <data name="textNovoTopico.Text" xml:space="preserve">
-    <value>New Topic</value>
+    <value>New Topic
+
+</value>
   </data>
   <data name="btnMudar.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 107</value>
@@ -134,7 +136,9 @@
     <value>Apply Changes</value>
   </data>
   <data name="textTopico.Text" xml:space="preserve">
-    <value>Current Topic</value>
+    <value>Current Topic
+
+</value>
   </data>
   <data name="novoTopico.Location" type="System.Drawing.Point, System.Drawing">
     <value>256, 82</value>

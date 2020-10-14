@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InterfaceCupula.Models;
 using InterfaceCupula.Controller;
+using System.Configuration;
 
 namespace InterfaceCupula.View
 {
@@ -53,20 +54,35 @@ namespace InterfaceCupula.View
 
             textTopico.Text = "Tópico atual";
             textNovoTopico.Text = "Novo tópico";
+            var language = ConfigurationManager.AppSettings["language"];
 
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
 
-                    textTopico.Text = "Broker atual";
-                    textNovoTopico.Text = "Novo Broker";
-
+                    if (language.Equals("en")) {
+                        textTopico.Text = "Broker atual";
+                        textNovoTopico.Text = "Novo Broker";
+                     }
+                    else
+                    {
+                        textTopico.Text = "Current Broker";
+                        textNovoTopico.Text = "New Broker";
+                    }
                     textoTopicoAtual.Text = atual_config[0].valor;
                     lastSelect = 0;
                     break;
                 case 1:
-                    textTopico.Text = "Porta atual";
-                    textNovoTopico.Text = "Nova Porta";
+
+                    if (language.Equals("en")) {
+                        textTopico.Text = "Porta atual";
+                        textNovoTopico.Text = "Nova Porta";
+                    }
+                    else
+                    {
+                        textTopico.Text = "Current Port";
+                        textNovoTopico.Text = "New Port";
+                    }
 
                     textoTopicoAtual.Text = atual_config[1].valor;
                     lastSelect = 1;

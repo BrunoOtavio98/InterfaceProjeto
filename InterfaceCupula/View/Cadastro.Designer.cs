@@ -53,9 +53,9 @@ namespace InterfaceCupula.View
             // 
             // BoxCadastro
             // 
-            resources.ApplyResources(this.BoxCadastro, "BoxCadastro");
             this.BoxCadastro.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BoxCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.BoxCadastro, "BoxCadastro");
             this.BoxCadastro.ForeColor = System.Drawing.SystemColors.InfoText;
             this.BoxCadastro.Name = "BoxCadastro";
             this.BoxCadastro.ReadOnly = true;
@@ -68,9 +68,9 @@ namespace InterfaceCupula.View
             // 
             // textBox2
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -83,9 +83,9 @@ namespace InterfaceCupula.View
             // 
             // accept
             // 
-            resources.ApplyResources(this.accept, "accept");
             this.accept.BackColor = System.Drawing.Color.LimeGreen;
             this.accept.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.accept, "accept");
             this.accept.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.accept.Name = "accept";
             this.accept.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@ namespace InterfaceCupula.View
             // 
             // cancel
             // 
-            resources.ApplyResources(this.cancel, "cancel");
             this.cancel.BackColor = System.Drawing.Color.Crimson;
             this.cancel.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.cancel, "cancel");
             this.cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cancel.Name = "cancel";
             this.cancel.UseVisualStyleBackColor = false;
@@ -117,54 +117,54 @@ namespace InterfaceCupula.View
             // 
             // textBoxAdm
             // 
-            resources.ApplyResources(this.textBoxAdm, "textBoxAdm");
             this.textBoxAdm.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxAdm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxAdm, "textBoxAdm");
             this.textBoxAdm.Name = "textBoxAdm";
             this.textBoxAdm.TextChanged += new System.EventHandler(this.textBoxAdm_TextChanged);
             // 
             // textBoxUser
             // 
-            resources.ApplyResources(this.textBoxUser, "textBoxUser");
             this.textBoxUser.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxUser, "textBoxUser");
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.TextChanged += new System.EventHandler(this.textBoxUser_TextChanged);
             // 
             // textBox4
             // 
-            resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.BackColor = System.Drawing.Color.LightGray;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.Name = "textBox4";
             // 
             // comboBox2
             // 
-            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.BackColor = System.Drawing.Color.LightGray;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             resources.GetString("comboBox2.Items"),
             resources.GetString("comboBox2.Items1")});
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.BoxCadastro);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBoxUser);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBoxAdm);
-            this.panel1.Controls.Add(this.accept);
             this.panel1.Controls.Add(this.checkBoxUser);
-            this.panel1.Controls.Add(this.cancel);
+            this.panel1.Controls.Add(this.textBoxAdm);
             this.panel1.Controls.Add(this.checkBoxAdm);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.accept);
+            this.panel1.Controls.Add(this.cancel);
             this.panel1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // Cadastro

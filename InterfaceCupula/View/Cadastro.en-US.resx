@@ -129,15 +129,21 @@
   <data name="cancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBoxUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 133</value>
+  </data>
   <data name="textBoxAdm.Text" xml:space="preserve">
     <value>Administrator</value>
+  </data>
+  <data name="textBoxUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 133</value>
   </data>
   <data name="textBoxUser.Text" xml:space="preserve">
     <value>User</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 154</value>
+    <value>253, 154</value>
   </data>
   <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 16</value>
@@ -146,7 +152,10 @@
     <value>Change language</value>
   </data>
   <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 176</value>
+    <value>264, 176</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 12</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

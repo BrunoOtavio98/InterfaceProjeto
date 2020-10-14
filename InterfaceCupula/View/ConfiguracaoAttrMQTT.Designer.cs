@@ -64,7 +64,6 @@ namespace InterfaceCupula.View
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnApagar);
@@ -77,59 +76,59 @@ namespace InterfaceCupula.View
             this.panel1.Controls.Add(this.painelInfoVel);
             this.panel1.Controls.Add(this.cfgInfoVelocidade);
             this.panel1.Controls.Add(this.painelInfoPos);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnApagar
             // 
-            resources.ApplyResources(this.btnApagar, "btnApagar");
             this.btnApagar.BackColor = System.Drawing.Color.Yellow;
             this.btnApagar.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnApagar, "btnApagar");
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.UseVisualStyleBackColor = false;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // textNovoTopico
             // 
-            resources.ApplyResources(this.textNovoTopico, "textNovoTopico");
             this.textNovoTopico.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textNovoTopico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textNovoTopico, "textNovoTopico");
             this.textNovoTopico.Name = "textNovoTopico";
             // 
             // btnMudar
             // 
-            resources.ApplyResources(this.btnMudar, "btnMudar");
             this.btnMudar.BackColor = System.Drawing.Color.Lime;
             this.btnMudar.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnMudar, "btnMudar");
             this.btnMudar.Name = "btnMudar";
             this.btnMudar.UseVisualStyleBackColor = false;
             this.btnMudar.Click += new System.EventHandler(this.btnMudar_Click);
             // 
             // textTopico
             // 
-            resources.ApplyResources(this.textTopico, "textTopico");
             this.textTopico.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textTopico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textTopico, "textTopico");
             this.textTopico.Name = "textTopico";
             this.textTopico.TextChanged += new System.EventHandler(this.textTopico_TextChanged);
             // 
             // novoTopico
             // 
-            resources.ApplyResources(this.novoTopico, "novoTopico");
             this.novoTopico.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.novoTopico, "novoTopico");
             this.novoTopico.Name = "novoTopico";
             this.novoTopico.TextChanged += new System.EventHandler(this.novoTopico_TextChanged);
             // 
             // textoTopicoAtual
             // 
-            resources.ApplyResources(this.textoTopicoAtual, "textoTopicoAtual");
             this.textoTopicoAtual.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.textoTopicoAtual, "textoTopicoAtual");
             this.textoTopicoAtual.Name = "textoTopicoAtual";
             this.textoTopicoAtual.ReadOnly = true;
             // 
             // comboBox1
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             resources.GetString("comboBox1.Items"),
@@ -148,28 +147,29 @@ namespace InterfaceCupula.View
             resources.GetString("comboBox1.Items13"),
             resources.GetString("comboBox1.Items14"),
             resources.GetString("comboBox1.Items15")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // painelInfoVel
             // 
-            resources.ApplyResources(this.painelInfoVel, "painelInfoVel");
             this.painelInfoVel.Controls.Add(this.aplicarInfoVel);
             this.painelInfoVel.Controls.Add(this.textBox13);
+            resources.ApplyResources(this.painelInfoVel, "painelInfoVel");
             this.painelInfoVel.Name = "painelInfoVel";
             // 
             // aplicarInfoVel
             // 
-            resources.ApplyResources(this.aplicarInfoVel, "aplicarInfoVel");
             this.aplicarInfoVel.BackColor = System.Drawing.Color.Lime;
+            resources.ApplyResources(this.aplicarInfoVel, "aplicarInfoVel");
             this.aplicarInfoVel.Name = "aplicarInfoVel";
             this.aplicarInfoVel.UseVisualStyleBackColor = false;
             // 
             // textBox13
             // 
-            resources.ApplyResources(this.textBox13, "textBox13");
             this.textBox13.BackColor = System.Drawing.Color.LightGray;
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox13, "textBox13");
             this.textBox13.Name = "textBox13";
             // 
             // cfgInfoVelocidade
@@ -180,23 +180,23 @@ namespace InterfaceCupula.View
             // 
             // painelInfoPos
             // 
-            resources.ApplyResources(this.painelInfoPos, "painelInfoPos");
             this.painelInfoPos.Controls.Add(this.aplicarInfoPos);
             this.painelInfoPos.Controls.Add(this.textBox16);
+            resources.ApplyResources(this.painelInfoPos, "painelInfoPos");
             this.painelInfoPos.Name = "painelInfoPos";
             // 
             // aplicarInfoPos
             // 
-            resources.ApplyResources(this.aplicarInfoPos, "aplicarInfoPos");
             this.aplicarInfoPos.BackColor = System.Drawing.Color.Lime;
+            resources.ApplyResources(this.aplicarInfoPos, "aplicarInfoPos");
             this.aplicarInfoPos.Name = "aplicarInfoPos";
             this.aplicarInfoPos.UseVisualStyleBackColor = false;
             // 
             // textBox16
             // 
-            resources.ApplyResources(this.textBox16, "textBox16");
             this.textBox16.BackColor = System.Drawing.Color.LightGray;
             this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox16, "textBox16");
             this.textBox16.Name = "textBox16";
             // 
             // imageList1
@@ -207,35 +207,35 @@ namespace InterfaceCupula.View
             // 
             // comboBox2
             // 
-            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.BackColor = System.Drawing.Color.LightGray;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             resources.GetString("comboBox2.Items"),
             resources.GetString("comboBox2.Items1")});
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox1
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.Color.LightGray;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // btnRegister
             // 
-            resources.ApplyResources(this.btnRegister, "btnRegister");
             this.btnRegister.BackgroundImage = global::InterfaceCupula.Properties.Resources.Webp4;
+            resources.ApplyResources(this.btnRegister, "btnRegister");
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnExit
             // 
-            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.BackgroundImage = global::InterfaceCupula.Properties.Resources.Webp3;
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);

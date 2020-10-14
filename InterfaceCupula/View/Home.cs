@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using InterfaceCupula;
 using InterfaceCupula.Controller;
 using InterfaceCupula.Models;
+using System.Configuration;
 
 namespace InterfaceCupula.View
 {
@@ -19,7 +20,7 @@ namespace InterfaceCupula.View
 
         bool shutterState = false;
         int antigo_valor = 0;
-
+       
 
         MQTTConnection mqttConnectionShutter;
         MQTTConnection mqttConnectionAH;
@@ -178,6 +179,7 @@ namespace InterfaceCupula.View
     
         private void timer1_Tick(object sender, EventArgs e)
         {
+            var language = ConfigurationManager.AppSettings["language"];
             try
             {
                 if (mqttConnectionCmdExterno.getMsg().Equals("1"))
@@ -214,15 +216,35 @@ namespace InterfaceCupula.View
 
                 if (mqttConnectioninfoTrapeira.getMsg().Equals("1"))
                 {
-                    msgShutter.Text = "Aberta";
+
+
+                    if (language.Equals("en")) {
+                        msgShutter.Text = "Aberta";
+                    }
+                    else
+                    {
+                        msgShutter.Text = "Open";
+                    }
                 }
                 else if (mqttConnectioninfoTrapeira.getMsg().Equals("2"))
                 {
-                    msgShutter.Text = "Aguardando";
+                    if (language.Equals("en")) {
+                        msgShutter.Text = "Aguardando";
+                    }
+                    else
+                    {
+                        msgShutter.Text = "Waiting";
+                    }
                 }
                 else
                 {
-                    msgShutter.Text = "Fechada";
+                    if (language.Equals("en")) {
+                        msgShutter.Text = "Fechada";
+                    }
+                    else
+                    {
+                        msgShutter.Text = "Closed";
+                    }
                 }
                                 
                 msgAzimute.Text = mqttConnectioninfoAzmDomo.getMsg() + ".0";
@@ -298,13 +320,25 @@ namespace InterfaceCupula.View
 
         public string convertBooleanToString(string toConvert)
         {
+            var language = ConfigurationManager.AppSettings["language"];
             if (toConvert.Equals("1"))
             {
-                return "Sim";
+                if (language.Equals("en")) {
+                    return "Sim";
+                }
+                else
+                {
+                    return "Yes";
+                }
             }
             else
             {
-                return "Não";
+                if (language.Equals("en")) {
+                    return "Não";
+                }
+                else{
+                    return "No";
+                }
             }
         }
 
@@ -357,6 +391,11 @@ namespace InterfaceCupula.View
                 this.Controls.Clear();
                 this.InitializeComponent();
             }
+        }
+
+        private void msgShutter_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

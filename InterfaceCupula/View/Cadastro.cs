@@ -22,22 +22,7 @@ namespace InterfaceCupula.View
         {
             InitializeComponent();
 
-            if (Program.getUserLogged().TipoUsuario == TiposDeUsuarios.Administrador)
-            {
-                checkBoxAdm.Visible = true;
-                textBoxAdm.Visible = true;
-
-                checkBoxUser.Visible = true;
-                textBoxUser.Visible = true;
-            }
-            else
-            {
-                checkBoxAdm.Visible = false;
-                textBoxAdm.Visible = false;
-
-                checkBoxUser.Visible = false;
-                textBoxUser.Visible = false;
-            }
+            checkTypeOfUser();
 
         }
 
@@ -168,6 +153,28 @@ namespace InterfaceCupula.View
                 this.Controls.Clear();
                 this.InitializeComponent();
            
+            }
+
+            checkTypeOfUser();
+        }
+
+        private void checkTypeOfUser()
+        {
+            if (Program.getUserLogged().TipoUsuario == TiposDeUsuarios.Administrador)
+            {
+                checkBoxAdm.Visible = true;
+                textBoxAdm.Visible = true;
+
+                checkBoxUser.Visible = true;
+                textBoxUser.Visible = true;
+            }
+            else
+            {
+                checkBoxAdm.Visible = false;
+                textBoxAdm.Visible = false;
+
+                checkBoxUser.Visible = false;
+                textBoxUser.Visible = false;
             }
         }
     }
