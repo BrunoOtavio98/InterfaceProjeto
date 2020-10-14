@@ -1,4 +1,7 @@
-﻿namespace InterfaceCupula
+﻿using System.Configuration;
+using System.Threading;
+
+namespace InterfaceCupula
 {
     partial class Form1
     {
@@ -28,6 +31,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            var language = ConfigurationManager.AppSettings["language"];
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.botaoLogin = new System.Windows.Forms.Button();
             this.botaoApagar = new System.Windows.Forms.Button();

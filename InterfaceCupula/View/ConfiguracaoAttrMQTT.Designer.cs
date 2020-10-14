@@ -1,4 +1,7 @@
-﻿namespace InterfaceCupula.View
+﻿using System.Threading;
+using System.Configuration;
+
+namespace InterfaceCupula.View
 {
     partial class ConfiguracaoAttrMQTT
     {
@@ -28,6 +31,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            var language = ConfigurationManager.AppSettings["language"];
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracaoAttrMQTT));
             this.panel1 = new System.Windows.Forms.Panel();

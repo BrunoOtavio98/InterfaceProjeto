@@ -146,8 +146,8 @@ namespace InterfaceCupula
         private void AtualizarEstadoMsgBox()
         {
 
-            BoxNome.Text = "Nome do usuário";
-            BoxSenha.Text = "Senha";
+            BoxNome.Text = "";
+            BoxSenha.Text = "";
             controlaClickNome = true;
             controlaClickSenha = true;
             BoxSenha.UseSystemPasswordChar = false;
@@ -168,14 +168,18 @@ namespace InterfaceCupula
                 comboBox2.Text = "Português - PT";
                 changeLanguage.UpdateConfig("language", "en");
                 // Application.Restart();
-                InitializeComponent();
+
+                this.Controls.Clear();
+                this.InitializeComponent();
             }
             else
             {
                 comboBox2.Text = "English - EN";
                 changeLanguage.UpdateConfig("language", "en-US");
                 //   Application.Restart();
-                InitializeComponent();
+
+                this.Controls.Clear();
+                this.InitializeComponent();
             }
         }
     }

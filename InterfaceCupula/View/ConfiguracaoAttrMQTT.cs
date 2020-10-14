@@ -261,13 +261,17 @@ namespace InterfaceCupula.View
             {
                 comboBox2.Text = "Português - PT";
                 changeLanguage.UpdateConfig("language", "en");
-                Application.Restart();
+
+                this.Controls.Clear();
+                this.InitializeComponent();
             }
             else
             {
                 comboBox2.Text = "English - EN";
                 changeLanguage.UpdateConfig("language", "en-US");
-                Application.Restart();
+
+                this.Controls.Clear();
+                this.InitializeComponent();
             }
         }
 

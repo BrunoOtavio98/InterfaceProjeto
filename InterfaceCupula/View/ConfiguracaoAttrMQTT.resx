@@ -120,9 +120,8 @@
   <data name="&gt;&gt;aplicarInfoVel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="painelInfoPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 958</value>
+  <data name="&gt;&gt;textTopico.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -139,6 +138,7 @@
   <data name="comboBox1.Items8" xml:space="preserve">
     <value>Configurar Tópico: Informação Trapeira</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="aplicarInfoPos.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
   </data>
@@ -174,7 +174,7 @@
     <value>5</value>
   </data>
   <data name="textoTopicoAtual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 16</value>
+    <value>200, 23</value>
   </data>
   <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -182,8 +182,8 @@
   <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cfgInfoVelocidade.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="painelInfoPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 958</value>
   </data>
   <data name="&gt;&gt;painelInfoPos.Name" xml:space="preserve">
     <value>painelInfoPos</value>
@@ -198,14 +198,14 @@
   <data name="&gt;&gt;btnRegister.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;btnRegister.Name" xml:space="preserve">
+    <value>btnRegister</value>
+  </data>
   <data name="btnApagar.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="&gt;&gt;textTopico.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnApagar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -245,6 +245,9 @@
   </data>
   <data name="&gt;&gt;aplicarInfoVel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;painelInfoVel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="aplicarInfoVel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1256,9 +1259,6 @@
         AAAAAAAA
 </value>
   </data>
-  <data name="&gt;&gt;cfgInfoVelocidade.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="textoTopicoAtual.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
   </data>
@@ -1319,9 +1319,6 @@
   <data name="textNovoTopico.Location" type="System.Drawing.Point, System.Drawing">
     <value>309, 60</value>
   </data>
-  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 53</value>
-  </data>
   <data name="textNovoTopico.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
@@ -1349,9 +1346,6 @@
   <data name="aplicarInfoPos.Text" xml:space="preserve">
     <value>Aplicar</value>
   </data>
-  <data name="&gt;&gt;novoTopico.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;aplicarInfoPos.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -1364,6 +1358,9 @@
   <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="aplicarInfoVel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="aplicarInfoPos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1375,9 +1372,6 @@
   </data>
   <data name="textNovoTopico.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
-  </data>
-  <data name="btnMudar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 23</value>
   </data>
   <data name="aplicarInfoPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1396,6 +1390,9 @@
   </data>
   <data name="&gt;&gt;aplicarInfoVel.Parent" xml:space="preserve">
     <value>painelInfoVel</value>
+  </data>
+  <data name="&gt;&gt;textBox16.Name" xml:space="preserve">
+    <value>textBox16</value>
   </data>
   <data name="textBox13.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1447,9 +1444,6 @@
   </data>
   <data name="novoTopico.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
-  </data>
-  <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
-    <value>imageList1</value>
   </data>
   <data name="aplicarInfoPos.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1505,6 +1499,9 @@
   <data name="cfgInfoVelocidade.Text" xml:space="preserve">
     <value>Trocar tópico info velocidade</value>
   </data>
+  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 206</value>
+  </data>
   <data name="textTopico.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
@@ -1541,26 +1538,23 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;painelInfoVel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cfgInfoVelocidade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Alterar idioma</value>
-  </data>
   <data name="btnApagar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="comboBox1.Items10" xml:space="preserve">
+    <value>Configurar Tópico: Informação Home</value>
   </data>
-  <data name="&gt;&gt;textTopico.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 53</value>
   </data>
-  <data name="&gt;&gt;btnRegister.Name" xml:space="preserve">
-    <value>btnRegister</value>
+  <data name="&gt;&gt;cfgInfoVelocidade.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="btnMudar.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -1569,13 +1563,16 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="novoTopico.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 16</value>
+    <value>200, 23</value>
+  </data>
+  <data name="&gt;&gt;painelInfoVel.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 182</value>
   </data>
-  <data name="comboBox1.Items10" xml:space="preserve">
-    <value>Configurar Tópico: Informação Home</value>
+  <data name="&gt;&gt;cfgInfoVelocidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="comboBox1.Items11" xml:space="preserve">
     <value>Configurar Tópico: Informação Park</value>
@@ -1610,8 +1607,8 @@
   <data name="textTopico.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="aplicarInfoVel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Alterar idioma</value>
   </data>
   <data name="&gt;&gt;aplicarInfoPos.Parent" xml:space="preserve">
     <value>painelInfoPos</value>
@@ -1649,26 +1646,26 @@
   <data name="comboBox1.Items1" xml:space="preserve">
     <value>Configurar Porta</value>
   </data>
-  <data name="&gt;&gt;painelInfoVel.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnExit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="&gt;&gt;textBox16.Name" xml:space="preserve">
-    <value>textBox16</value>
+  <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
+    <value>imageList1</value>
   </data>
-  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 206</value>
-  </data>
-  <data name="comboBox2.Text" xml:space="preserve">
-    <value>Português - PT</value>
+  <data name="btnMudar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 23</value>
   </data>
   <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cfgInfoVelocidade.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;painelInfoPos.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1691,16 +1688,13 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>461, 135</value>
   </data>
-  <data name="&gt;&gt;textBox13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;novoTopico.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
   </metadata>
 </root>
