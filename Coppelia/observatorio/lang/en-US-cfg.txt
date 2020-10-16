@@ -1,0 +1,8 @@
+100 = Settings
+200 = Available parameters
+201 = Language:
+202 = Window of movement (deg):
+203 = Park position:
+400 = Save
+500 = Exit
+501 = Do you really want to leave? (Not saved changes will be lost)

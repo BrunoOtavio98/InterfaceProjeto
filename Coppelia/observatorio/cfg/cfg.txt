@@ -1,0 +1,3 @@
+lang = pt-BR
+deg-window = 2
+park-pos = 200

@@ -1,0 +1,8 @@
+100 = Configuracoes
+200 = Parametros disponiveis
+201 = Linguagem:
+202 = Janela de movimento (deg):
+203 = Posicao Park:
+400 = Salvar
+500 = Sair
+501 = Deseja realmente sair? (Mudanças não salvas serão perdidas)

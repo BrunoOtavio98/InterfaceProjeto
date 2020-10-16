@@ -1,0 +1,21 @@
+<ui closeable="true" on-close="cfgClose" resizable="false">
+    <label id="200" text="Parametros" wordwrap="true" style="font-size:15px;font-weight:bold;"/>
+    <group layout="hbox" flat="true">
+        <group layout="vbox">
+            <group layout="grid" flat="true">
+                <label id="201" text="Linguagem: " />
+                <combobox id="16" style="font-size:15px;font-weight:bold;">
+                    <item id="17">pt-BR</item>
+                    <item id="18">en-US</item>
+                </combobox>
+                <br/>
+                <label id="202" text="Janela de movimento: " />
+                <spinbox id="19" minimum="1" maximum="10" style="font-size:15px;font-weight:bold;" />
+                <br/>
+                <label id="203" text="Posicao Park: " />
+                <spinbox id="20" minimum="0" maximum="359" style="font-size:15px;font-weight:bold;" />
+            </group>
+            <button id="400" text="Salvar" on-click="cfgSave" style="font-size:15px;font-weight:bold;text-align:center;"/>
+        </group>
+    </group>
+</ui>

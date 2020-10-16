@@ -1,41 +1,38 @@
 <ui closeable="true" on-close="eventoFechar" resizable="false">
-    <label
-        text="Sistema de controle Cúpula OAUEPG"
-        wordwrap="true"
-    />
-    <tabs>
-        <tab    title="Controles"
-                style="background-image: url('&imgBkg');
-                        background-repeat: no-repeat;
-                        background-attachment: fixed;
-                        background-size: cover;"
-        >
+    <group layout="hbox" flat="true">
+        <label id="200" text="Controles" wordwrap="true" style="font-size:15px;font-weight:bold;"/>
+    </group>
             <group layout="hbox" flat="true" style= "background-image: url('');">
                 <group layout="vbox">
                     <group layout="grid" flat="true">
-                        <label text="Trapeira: " />
-                        <label id="101" text="-trap" />
+                        <label id="201" text="Trapeira: " />
+                        <label id="101" text="" />
                         <br/>
-                        <label text="Azimute cupula (deg): " />
-                        <label id="102" text="-azm" />
+                        <label id="202"text="Azimute cupula (deg): " />
+                        <label id="102" text="" />
                         <br/>
-                        <label text="Posicao Home: " />
-                        <label id="103" text="-home" />
+                        <label id="203" text="Posicao Home: " />
+                        <label id="103" text="" />
                         <br/>
-                        <label text="Posicao Park: " />
-                        <label id="104" text="-home" />
+                        <label id="204" text="Posicao Park: " />
+                        <label id="104" text="" />
                         <br/>
-                        <label text="Janela de movimento (deg): " />
-                        <label id="105" text="-home" />
+                        <label id="205" text="Janela de movimento (deg): " />
+                        <label id="105" text="" />
                         <br/>
                     </group>
                 </group>
                 <group layout="vbox" flat="true">
                     <group layout="grid" flat="true">
-                        <checkbox text="Habilitar comandos remotos (MQTT)" on-change="checkboxMQTT"  />
+                        <checkbox id="300" text="" on-change="checkboxMQTT"/>
+                        <label id="210" text="Habilitar comandos remotos (MQTT)"/>
                         <br/>
-                        <checkbox id="1001" text="Sincronizar com telescopio" on-change="checkboxSincTele"  />
+                        <checkbox id="301" text="" on-change="checkboxSincTele"/>
+                        <label id="211" text="Sincronizar com telescopio"/>
+                        <br/>
+                        
                     </group>
+                    <button id="405" text="Configuracoes" on-click="cfgOpen" style="font-size:15px;font-weight:bold;"/>
                 </group>
             </group>
 
@@ -45,26 +42,35 @@
                         <group layout="vbox" flat="true">
                         </group>  
                         <group layout="vbox" flat="true">
-                            <button id="10" text="    Acionar trapeira    " on-click="btnTrapeiraClick" style="font-size:15px;font-weight:bold;text-align:center;"/>
+                            <button id="400" text="    Acionar trapeira    " on-click="btnTrapeiraClick" style="font-size:15px;font-weight:bold;text-align:center;"/>
                         </group> 
                         <group layout="vbox" flat="true">
                         </group>  
                     </group>
                     <group layout="hbox" flat="true">
                         <group layout="vbox" flat="true"> 
-                            <button id="12" text="Girar Anti-horário" on-click="btnGiraAH" style="font-size:15px;font-weight:bold;"/>	
+                            <button id="401" text="Girar Anti-horario" on-click="btnGiraAH" style="font-size:15px;font-weight:bold;"/>	
                         </group>  
                         <group layout="vbox" flat="true">
-                            <button id="13" text="   Girar Horário  " on-click="btnGiraH" style="font-size:15px;font-weight:bold;"/>
+                            <button id="402" text="   Girar Horario  " on-click="btnGiraH" style="font-size:15px;font-weight:bold;"/>
                         </group> 
                     </group> 
+                    <group layout="hbox" flat="true">
+                        <group layout="vbox" flat="true">
+                        </group>  
+                        <group layout="vbox" flat="true">
+                            <button id="403" text="    Posicao Park    " on-click="btnAzmPark" style="font-size:15px;font-weight:bold;text-align:center;"/>
+                        </group> 
+                        <group layout="vbox" flat="true">
+                        </group>  
+                    </group>
                     <group layout="hbox" flat="true">           
                         <group layout="vbox" flat="true">
                         </group>  
-                        <label style="font-size:15px;font-weight:bold;text-align:center;" text="Azimute destino" />
+                        <label id="206" style="font-size:15px;font-weight:bold;text-align:center;" text="Azimute destino" />
                         <group layout="grid" flat="true">                  
                            <spinbox id="14" minimum="0" maximum="359" style="font-size:15px;font-weight:bold;" />
-                           <button id="15" text="Ir" on-click="btnAzmDest" style="font-size:15px;font-weight:bold;"/>
+                           <button id="404" text="Ir" on-click="btnAzmDest" style="font-size:15px;font-weight:bold;"/>
                         </group> 
                         <group layout="vbox" flat="true">
                         </group>  
@@ -74,6 +80,4 @@
             <group layout="vbox" flat="true" style= "background-image: url('');">
                 
             </group>
-            </tab>
-    </tabs>
 </ui>
